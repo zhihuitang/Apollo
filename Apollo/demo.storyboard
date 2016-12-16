@@ -5,9 +5,52 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Dispatch View Controller-->
+        <scene sceneID="eg2-Pp-WIk">
+            <objects>
+                <viewController storyboardIdentifier="Dispatch" id="P8E-9Q-84E" customClass="DispatchViewController" customModule="Apollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bN5-UI-VXI"/>
+                        <viewControllerLayoutGuide type="bottom" id="yV5-uS-Ouo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SLI-IC-XYS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-hF-dlv">
+                                <rect key="frame" x="112" y="318" width="150" height="30"/>
+                                <state key="normal" title="async"/>
+                                <connections>
+                                    <action selector="dispatchGo:" destination="P8E-9Q-84E" eventType="touchUpInside" id="gNa-vq-y7Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="469-9p-5cP">
+                                <rect key="frame" x="112" y="356" width="150" height="30"/>
+                                <state key="normal" title="queueWithQos"/>
+                                <connections>
+                                    <action selector="queueWithQos:" destination="P8E-9Q-84E" eventType="touchUpInside" id="Rj5-EQ-W9n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6fq-hF-dlv" firstAttribute="centerX" secondItem="SLI-IC-XYS" secondAttribute="centerX" id="3eH-pb-EuC"/>
+                            <constraint firstItem="6fq-hF-dlv" firstAttribute="leading" secondItem="SLI-IC-XYS" secondAttribute="leadingMargin" constant="96" id="8QC-Pb-Mxd"/>
+                            <constraint firstItem="6fq-hF-dlv" firstAttribute="trailing" secondItem="469-9p-5cP" secondAttribute="trailing" id="YzC-fa-jfF"/>
+                            <constraint firstItem="6fq-hF-dlv" firstAttribute="leading" secondItem="469-9p-5cP" secondAttribute="leading" id="d04-YB-4Vj"/>
+                            <constraint firstItem="6fq-hF-dlv" firstAttribute="centerY" secondItem="SLI-IC-XYS" secondAttribute="centerY" id="f01-Cs-f4f"/>
+                            <constraint firstItem="469-9p-5cP" firstAttribute="top" secondItem="6fq-hF-dlv" secondAttribute="bottom" constant="8" symbolic="YES" id="xVb-4f-0om"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIQ-aa-gR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12152.799999999999" y="-1130.2848575712144"/>
+        </scene>
         <!--Face View Controller-->
         <scene sceneID="fvv-dF-REh">
             <objects>
