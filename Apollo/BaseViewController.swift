@@ -8,13 +8,25 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+var instanceCount = 0
 
+class BaseViewController: UIViewController {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        instanceCount = instanceCount + 1
+    }
+    
+    deinit {
+        instanceCount = instanceCount - 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = getDemoName()
         // Do any additional setup after loading the view.
+        print("\(getDemoName()) count: \(instanceCount)")
     }
 
     override func didReceiveMemoryWarning() {

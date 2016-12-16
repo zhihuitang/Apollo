@@ -14,6 +14,7 @@ class CustomViewViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +32,21 @@ class CustomViewViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func draw(_ sender: Any) {
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 80, y: 50))
+        path.addLine(to: CGPoint(x: 140, y: 150))
+        path.addLine(to: CGPoint(x: 10, y: 150))
+        path.close()
+        
+        //        UIColor.green.setFill()
+        //        UIColor.red.setFill()
+        path.lineWidth = 3.0
+        path.fill()
+        path.stroke()
+
+    }
 
 }
 

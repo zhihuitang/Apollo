@@ -11,7 +11,6 @@
 		02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D351E03E56300D3820B /* CustomViewViewController.swift */; };
 		02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D371E03E57500D3820B /* AlamofireViewController.swift */; };
 		02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F010E71E03E13C00D730D8 /* AppDelegate.swift */; };
-		02F010EA1E03E13C00D730D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F010E91E03E13C00D730D8 /* ViewController.swift */; };
 		02F010ED1E03E13C00D730D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F010EB1E03E13C00D730D8 /* Main.storyboard */; };
 		02F010EF1E03E13C00D730D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F010EE1E03E13C00D730D8 /* Assets.xcassets */; };
 		02F010F21E03E13C00D730D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F010F01E03E13C00D730D8 /* LaunchScreen.storyboard */; };
@@ -43,7 +42,6 @@
 		02898D371E03E57500D3820B /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
 		02F010E41E03E13C00D730D8 /* Apollo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F010E71E03E13C00D730D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02F010E91E03E13C00D730D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02F010EC1E03E13C00D730D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02F010EE1E03E13C00D730D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02F010F11E03E13C00D730D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +80,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02898D391E03E93000D3820B /* DemoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02898D331E03E43D00D3820B /* BaseViewController.swift */,
+				02898D371E03E57500D3820B /* AlamofireViewController.swift */,
+				02898D351E03E56300D3820B /* CustomViewViewController.swift */,
+			);
+			name = DemoViewController;
+			sourceTree = "<group>";
+		};
+		02898D3A1E03E95100D3820B /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				02F010E71E03E13C00D730D8 /* AppDelegate.swift */,
+				02F010EB1E03E13C00D730D8 /* Main.storyboard */,
+				02F010EE1E03E13C00D730D8 /* Assets.xcassets */,
+				02F010F01E03E13C00D730D8 /* LaunchScreen.storyboard */,
+				02F010F31E03E13C00D730D8 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
 		02F010DB1E03E13C00D730D8 = {
 			isa = PBXGroup;
 			children = (
@@ -105,16 +125,9 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
-				02F010E71E03E13C00D730D8 /* AppDelegate.swift */,
-				02898D371E03E57500D3820B /* AlamofireViewController.swift */,
-				02898D351E03E56300D3820B /* CustomViewViewController.swift */,
-				02F010E91E03E13C00D730D8 /* ViewController.swift */,
 				02F011151E03E1F400D730D8 /* MainViewController.swift */,
-				02898D331E03E43D00D3820B /* BaseViewController.swift */,
-				02F010EB1E03E13C00D730D8 /* Main.storyboard */,
-				02F010EE1E03E13C00D730D8 /* Assets.xcassets */,
-				02F010F01E03E13C00D730D8 /* LaunchScreen.storyboard */,
-				02F010F31E03E13C00D730D8 /* Info.plist */,
+				02898D3A1E03E95100D3820B /* Supporting files */,
+				02898D391E03E93000D3820B /* DemoViewController */,
 			);
 			path = Apollo;
 			sourceTree = "<group>";
@@ -278,7 +291,6 @@
 				02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */,
 				02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */,
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
-				02F010EA1E03E13C00D730D8 /* ViewController.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

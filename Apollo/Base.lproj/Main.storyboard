@@ -82,7 +82,20 @@
                     <view key="view" contentMode="scaleToFill" id="pTd-8M-4Vj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-CV-1Sj">
+                                <rect key="frame" x="170" y="38" width="34" height="30"/>
+                                <state key="normal" title="draw"/>
+                                <connections>
+                                    <action selector="draw:" destination="121-iQ-jfX" eventType="touchUpInside" id="SzV-Fm-PZq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PdG-CV-1Sj" firstAttribute="centerX" secondItem="pTd-8M-4Vj" secondAttribute="centerX" id="MdT-RN-OBM"/>
+                            <constraint firstItem="PdG-CV-1Sj" firstAttribute="top" secondItem="GeP-Xb-pE1" secondAttribute="bottom" constant="18" id="qpw-je-M3I"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5i-Tq-LG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
