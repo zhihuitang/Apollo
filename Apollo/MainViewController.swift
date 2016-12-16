@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MainViewController: UITableViewController {
 
     var demos = [String]()
@@ -20,16 +21,15 @@ class MainViewController: UITableViewController {
         print("device name:\(UIDevice.current.name)")
         self.navigationItem.title = "Apollo project"
         
+        loadData()
+    }
+
+    private func loadData() {
         demos.append("Alamofire")
         demos.append("CustomView")
         demos.append("Calculator")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -107,4 +107,9 @@ class MainViewController: UITableViewController {
     }
     */
 
+}
+
+
+extension MainViewController: SessionDelegate {
+    
 }

@@ -34,6 +34,11 @@ class CustomViewViewController: BaseViewController {
     */
     @IBAction func draw(_ sender: Any) {
         
+        let text = NSAttributedString(string: "hello")
+        text.draw(at: CGPoint(x: 180, y: 250))
+        let textSize = text.size()
+        
+        /*
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 80, y: 50))
         path.addLine(to: CGPoint(x: 140, y: 150))
@@ -45,7 +50,7 @@ class CustomViewViewController: BaseViewController {
         path.lineWidth = 3.0
         path.fill()
         path.stroke()
-
+        */
     }
 
 }
