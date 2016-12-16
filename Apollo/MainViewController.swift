@@ -28,6 +28,7 @@ class MainViewController: UITableViewController {
         demos.append("Alamofire")
         demos.append("CustomView")
         demos.append("Calculator")
+        demos.append("FaceIt")
     }
     
     // MARK: - Table view data source
