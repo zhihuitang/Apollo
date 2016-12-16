@@ -29,10 +29,10 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="mouthCurvature">
-                                        <real key="value" value="0.40000000000000002"/>
+                                        <real key="value" value="0.90000000000000002"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.0" green="0.38844600340000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="eyeBrowTilt">
                                         <real key="value" value="0.0"/>
@@ -51,6 +51,9 @@
                             <constraint firstItem="XZs-Ep-c1o" firstAttribute="leading" secondItem="w7e-pp-b7e" secondAttribute="leading" id="fO1-ny-8gS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="XZs-Ep-c1o" id="Wch-1d-x2c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tkk-fz-gx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

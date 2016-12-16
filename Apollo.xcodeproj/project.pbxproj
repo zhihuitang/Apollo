@@ -12,6 +12,7 @@
 		023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C153E1E03FAB500E5B4C1 /* SessionManager.swift */; };
 		023C15411E03FECE00E5B4C1 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15401E03FECE00E5B4C1 /* FaceViewController.swift */; };
 		023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15421E03FF8B00E5B4C1 /* FaceView.swift */; };
+		023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15451E041DFC00E5B4C1 /* FacialExpression.swift */; };
 		02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D331E03E43D00D3820B /* BaseViewController.swift */; };
 		02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D351E03E56300D3820B /* CustomViewViewController.swift */; };
 		02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D371E03E57500D3820B /* AlamofireViewController.swift */; };
@@ -47,6 +48,7 @@
 		023C153E1E03FAB500E5B4C1 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		023C15401E03FECE00E5B4C1 /* FaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		023C15421E03FF8B00E5B4C1 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		023C15451E041DFC00E5B4C1 /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		02898D331E03E43D00D3820B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		02898D351E03E56300D3820B /* CustomViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewViewController.swift; sourceTree = "<group>"; };
 		02898D371E03E57500D3820B /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 				023C15421E03FF8B00E5B4C1 /* FaceView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		023C15471E041EB300E5B4C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				023C15451E041DFC00E5B4C1 /* FacialExpression.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		02898D391E03E93000D3820B /* DemoViewController */ = {
@@ -148,6 +158,7 @@
 			children = (
 				02F011151E03E1F400D730D8 /* MainViewController.swift */,
 				023C153E1E03FAB500E5B4C1 /* SessionManager.swift */,
+				023C15471E041EB300E5B4C1 /* Model */,
 				023C15441E03FFDC00E5B4C1 /* View */,
 				02898D3A1E03E95100D3820B /* Supporting files */,
 				02898D391E03E93000D3820B /* DemoViewController */,
@@ -318,6 +329,7 @@
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
+				023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */,
 				023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */,
 				023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */,
 			);
