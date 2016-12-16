@@ -22,6 +22,7 @@ class MainViewController: UITableViewController {
         
         demos.append("Alamofire")
         demos.append("CustomView")
+        demos.append("Calculator")
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +43,7 @@ class MainViewController: UITableViewController {
     }
 
     func getDemoViewController(identifier: String) -> BaseViewController {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "demo", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: identifier ) as! BaseViewController
     }
 
