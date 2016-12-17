@@ -24,9 +24,9 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = getDemoName()
+        self.navigationItem.title = self.name
         // Do any additional setup after loading the view.
-        print("\(getDemoName()) count: \(instanceCount)")
+        print("\(self.className) count: \(instanceCount)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,17 +49,15 @@ class BaseViewController: UIViewController {
 
 
 protocol DemoView {
-    func getDemoName() -> String
-    func getDemoDescription() -> String
+    var name: String { get }
 }
 
 
 extension BaseViewController: DemoView {
-    func getDemoDescription() -> String {
-        fatalError("This method must be overridden")
-    }
-    
-    func getDemoName() -> String {
-        fatalError("This method must be overridden")
+    internal var name: String {
+        get {
+            return "Base"
+        }
+        
     }
 }

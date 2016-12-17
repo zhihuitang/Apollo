@@ -23,11 +23,7 @@ class AlamofireViewController: BaseViewController {
 }
 
 extension AlamofireViewController {
-    override func getDemoDescription() -> String {
-        return "Demo"
-    }
-    
-    override func getDemoName() -> String {
-        return "Alamofire"
+    override var name: String {
+        return "Alamofire demo"
     }
 }

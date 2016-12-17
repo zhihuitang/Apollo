@@ -61,11 +61,9 @@ class FaceViewController: BaseViewController {
 }
 
 extension FaceViewController {
-    override func getDemoName() -> String {
-        return "Face It"
-    }
     
-    override func getDemoDescription() -> String {
-        return "Stanford demo"
+    override var name: String {
+        return "FaceView demo"
     }
+
 }

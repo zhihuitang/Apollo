@@ -46,11 +46,9 @@ class CalculatorViewController: BaseViewController {
 }
 
 extension CalculatorViewController {
-    override func getDemoDescription() -> String {
-        return "Demo"
-    }
     
-    override func getDemoName() -> String {
+    override var name: String {
         return "Calculator"
     }
+
 }

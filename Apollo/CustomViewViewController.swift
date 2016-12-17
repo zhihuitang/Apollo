@@ -58,11 +58,9 @@ class CustomViewViewController: BaseViewController {
 
 
 extension CustomViewViewController {
-    override func getDemoDescription() -> String {
-        return "Demo"
-    }
     
-    override func getDemoName() -> String {
+    override var name: String {
         return "Custom View"
     }
+
 }

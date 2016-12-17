@@ -53,9 +53,10 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let demoAlamo = getDemoViewController(identifier: demos[indexPath.row]) as DemoView
-        cell.textLabel!.text = demoAlamo.getDemoName()
-        cell.detailTextLabel!.text = demoAlamo.getDemoDescription()
+        let demoAlamo = getDemoViewController(identifier: demos[indexPath.row])
+        cell.textLabel!.text = demoAlamo.name
+        cell.detailTextLabel!.text = demoAlamo.className
+
         return cell
     }
     
@@ -110,7 +111,6 @@ class MainViewController: UITableViewController {
     */
 
 }
-
 
 extension MainViewController: SessionDelegate {
     
