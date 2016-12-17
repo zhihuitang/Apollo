@@ -126,7 +126,7 @@ class FaceView: UIView {
         
     }
     
-    func changeScale(recognizer: UIPinchGestureRecognizer) {
+    public func changeScale(recognizer: UIPinchGestureRecognizer) {
         switch recognizer.state {
         case .changed,.ended:
             scale *= recognizer.scale
