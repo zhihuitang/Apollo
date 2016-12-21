@@ -24,6 +24,7 @@ class CalculatorBrain {
         "e": Operation.Constant(M_E), //M_E,
         "√": Operation.UnaryOperation(sqrt), //sqrt,
         "±": Operation.UnaryOperation({ -$0 }),
+        "1/x": Operation.UnaryOperation( {1 / $0} ),
 //        "+": Operation.BinaryOperation(+), //
 //        "−": Operation.BinaryOperation(-), //
 //        "×": Operation.BinaryOperation(*),
