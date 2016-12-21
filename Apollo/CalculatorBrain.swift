@@ -19,6 +19,7 @@ class CalculatorBrain {
     }
     
     var operations: Dictionary<String, Operation> =  [
+        "AC": Operation.Constant(0), //M_PI,
         "π": Operation.Constant(M_PI), //M_PI,
         "e": Operation.Constant(M_E), //M_E,
         "√": Operation.UnaryOperation(sqrt), //sqrt,
@@ -36,7 +37,8 @@ class CalculatorBrain {
         "÷": Operation.BinaryOperation( {$0 / $1} ),
         "=": Operation.Equals,
         "sin": Operation.UnaryOperation(sin),
-        "cos": Operation.UnaryOperation(cos)
+        "cos": Operation.UnaryOperation(cos),
+        "tan": Operation.UnaryOperation(tan),
         
     ]
     

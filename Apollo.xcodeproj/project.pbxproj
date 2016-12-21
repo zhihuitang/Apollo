@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F71E1E04F1E800ECCB85 /* Extensions.swift */; };
 		0204F7211E058CE200ECCB85 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */; };
+		0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F7231E068FB600ECCB85 /* DictManager.swift */; };
 		023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C152D1E03EBAD00E5B4C1 /* CalculatorViewController.swift */; };
 		023C15301E03EBC100E5B4C1 /* demo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023C152F1E03EBC100E5B4C1 /* demo.storyboard */; };
 		023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C153E1E03FAB500E5B4C1 /* SessionManager.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0204F71E1E04F1E800ECCB85 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		0204F7231E068FB600ECCB85 /* DictManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictManager.swift; sourceTree = "<group>"; };
 		023C152D1E03EBAD00E5B4C1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		023C152F1E03EBC100E5B4C1 /* demo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = demo.storyboard; sourceTree = "<group>"; };
 		023C153E1E03FAB500E5B4C1 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0204F7221E068F8800ECCB85 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0204F7231E068FB600ECCB85 /* DictManager.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		023C15441E03FFDC00E5B4C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
+				0204F7221E068F8800ECCB85 /* Tools */,
 				02F011151E03E1F400D730D8 /* MainViewController.swift */,
 				023C153E1E03FAB500E5B4C1 /* SessionManager.swift */,
 				023C15471E041EB300E5B4C1 /* Model */,
@@ -336,6 +347,7 @@
 				02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */,
 				02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */,
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
+				0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */,
 				023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
