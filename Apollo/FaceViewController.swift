@@ -10,6 +10,16 @@ import UIKit
 
 class FaceViewController: BaseViewController {
     
+    var blinking = false {
+        didSet {
+            startBlink()
+        }
+    }
+    struct BlinkingRate {
+        static let OpenDuration = 1.5
+        static let CloseDuration = 0.5
+    }
+    
     @IBOutlet weak var faceView: FaceView! {
         didSet {
             faceView.addGestureRecognizer(UIPinchGestureRecognizer(
@@ -65,6 +75,30 @@ class FaceViewController: BaseViewController {
             case .Closed: expression.eyes = .Open
             case .Squinting: break
             }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        blinking = true
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        blinking = false
+        
+    }
+    
+    func startBlink(){
+        if blinking {
+            faceView.eyesOpen = false
+            Timer.scheduledTimer(timeInterval: BlinkingRate.CloseDuration, target: self, selector: #selector(FaceViewController.endBlink), userInfo: nil, repeats: false)
+        }
+    }
+    
+    func endBlink() {
+        if blinking {
+            faceView.eyesOpen = true
+            Timer.scheduledTimer(timeInterval: BlinkingRate.OpenDuration, target: self, selector: #selector(FaceViewController.startBlink), userInfo: nil, repeats: false)
         }
     }
 }
