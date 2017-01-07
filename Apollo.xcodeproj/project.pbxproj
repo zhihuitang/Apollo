@@ -10,6 +10,7 @@
 		0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F71E1E04F1E800ECCB85 /* Extensions.swift */; };
 		0204F7211E058CE200ECCB85 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */; };
 		0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F7231E068FB600ECCB85 /* DictManager.swift */; };
+		022D10961E0BD229001BDFBB /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D10951E0BD229001BDFBB /* EyeView.swift */; };
 		023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C152D1E03EBAD00E5B4C1 /* CalculatorViewController.swift */; };
 		023C15301E03EBC100E5B4C1 /* demo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023C152F1E03EBC100E5B4C1 /* demo.storyboard */; };
 		023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C153E1E03FAB500E5B4C1 /* SessionManager.swift */; };
@@ -17,6 +18,8 @@
 		023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15421E03FF8B00E5B4C1 /* FaceView.swift */; };
 		023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15451E041DFC00E5B4C1 /* FacialExpression.swift */; };
 		023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */; };
+		02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */; };
+		026BD16E1E21A4EE00C0E3F3 /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 026BD16D1E21A4EE00C0E3F3 /* applelogo.png */; };
 		02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D331E03E43D00D3820B /* BaseViewController.swift */; };
 		02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D351E03E56300D3820B /* CustomViewViewController.swift */; };
 		02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D371E03E57500D3820B /* AlamofireViewController.swift */; };
@@ -27,6 +30,7 @@
 		02F010FD1E03E13C00D730D8 /* ApolloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F010FC1E03E13C00D730D8 /* ApolloTests.swift */; };
 		02F011081E03E13C00D730D8 /* ApolloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F011071E03E13C00D730D8 /* ApolloUITests.swift */; };
 		02F011161E03E1F400D730D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F011151E03E1F400D730D8 /* MainViewController.swift */; };
+		02F8614A1E21547900F18FBC /* LocalNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F861491E21547900F18FBC /* LocalNotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,7 @@
 		0204F71E1E04F1E800ECCB85 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		0204F7231E068FB600ECCB85 /* DictManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictManager.swift; sourceTree = "<group>"; };
+		022D10951E0BD229001BDFBB /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
 		023C152D1E03EBAD00E5B4C1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		023C152F1E03EBC100E5B4C1 /* demo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = demo.storyboard; sourceTree = "<group>"; };
 		023C153E1E03FAB500E5B4C1 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -57,6 +62,8 @@
 		023C15421E03FF8B00E5B4C1 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 		023C15451E041DFC00E5B4C1 /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchViewController.swift; sourceTree = "<group>"; };
+		02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		026BD16D1E21A4EE00C0E3F3 /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		02898D331E03E43D00D3820B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		02898D351E03E56300D3820B /* CustomViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewViewController.swift; sourceTree = "<group>"; };
 		02898D371E03E57500D3820B /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		02F011071E03E13C00D730D8 /* ApolloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloUITests.swift; sourceTree = "<group>"; };
 		02F011091E03E13C00D730D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F011151E03E1F400D730D8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		02F861491E21547900F18FBC /* LocalNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				023C15421E03FF8B00E5B4C1 /* FaceView.swift */,
+				022D10951E0BD229001BDFBB /* EyeView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -125,6 +134,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		026BD16F1E21A59B00C0E3F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				026BD16D1E21A4EE00C0E3F3 /* applelogo.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		02898D391E03E93000D3820B /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +151,8 @@
 				023C152D1E03EBAD00E5B4C1 /* CalculatorViewController.swift */,
 				023C15401E03FECE00E5B4C1 /* FaceViewController.swift */,
 				023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */,
+				02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */,
+				02F861491E21547900F18FBC /* LocalNotificationViewController.swift */,
 			);
 			name = DemoViewController;
 			sourceTree = "<group>";
@@ -175,6 +194,7 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
+				026BD16F1E21A59B00C0E3F3 /* Resources */,
 				0204F7221E068F8800ECCB85 /* Tools */,
 				02F011151E03E1F400D730D8 /* MainViewController.swift */,
 				023C153E1E03FAB500E5B4C1 /* SessionManager.swift */,
@@ -315,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F010F21E03E13C00D730D8 /* LaunchScreen.storyboard in Resources */,
+				026BD16E1E21A4EE00C0E3F3 /* applelogo.png in Resources */,
 				02F010EF1E03E13C00D730D8 /* Assets.xcassets in Resources */,
 				02F010ED1E03E13C00D730D8 /* Main.storyboard in Resources */,
 				023C15301E03EBC100E5B4C1 /* demo.storyboard in Resources */,
@@ -346,14 +367,17 @@
 				02F011161E03E1F400D730D8 /* MainViewController.swift in Sources */,
 				02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */,
 				02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */,
+				02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */,
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
 				0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */,
 				023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */,
+				022D10961E0BD229001BDFBB /* EyeView.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
 				023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */,
 				0204F7211E058CE200ECCB85 /* CalculatorBrain.swift in Sources */,
+				02F8614A1E21547900F18FBC /* LocalNotificationViewController.swift in Sources */,
 				023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */,
 				023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */,
 			);

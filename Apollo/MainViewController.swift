@@ -11,6 +11,10 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    struct Storyboard {
+        static let demo = "demo"
+    }
+    
     var demos = [String]()
 
     override func viewDidLoad() {
@@ -30,6 +34,8 @@ class MainViewController: UITableViewController {
         demos.append("Calculator")
         demos.append("FaceIt")
         demos.append("Dispatch")
+        demos.append("Timer")
+        demos.append("LocalNotification")
     }
     
     // MARK: - Table view data source
@@ -45,7 +51,7 @@ class MainViewController: UITableViewController {
     }
 
     func getDemoViewController(identifier: String) -> BaseViewController {
-        let storyboard: UIStoryboard = UIStoryboard(name: "demo", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: Storyboard.demo, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: identifier ) as! BaseViewController
     }
 

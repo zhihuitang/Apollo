@@ -19,9 +19,9 @@ class FaceView: UIView {
     @IBInspectable
     var eyeBrowTilt: Double = -0.5 { didSet { setNeedsDisplay() } }  //-1, 1
     @IBInspectable
-    var color: UIColor = UIColor.blue { didSet { setNeedsDisplay() } }
+    var color: UIColor = UIColor.blue { didSet { setNeedsDisplay(); leftEye.color = color; rightEye.color = color } }
     @IBInspectable
-    var linewidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
+    var linewidth: CGFloat = 5.0 { didSet { setNeedsDisplay(); leftEye.lineWidth = linewidth; rightEye.lineWidth = linewidth } }
     
     
     private var skullRadius: CGFloat {
@@ -69,7 +69,18 @@ class FaceView: UIView {
         }
         return eyeCenter
     }
+    private lazy var leftEye: EyeView = self.createEye()
+    private lazy var rightEye: EyeView = self.createEye()
     
+    private func createEye() -> EyeView{
+        let eye = EyeView()
+        eye.isOpaque = true
+        eye.color = color
+        eye.lineWidth = linewidth
+        self.addSubview(eye)
+        return eye
+    }
+    /*
     private func pathForEye(eye: Eye) -> UIBezierPath {
         let eyeRadius = skullRadius / Ratios.SkullRadiusToEyeRadius
         let eyeCenter = getEyeCenter(eye: eye)
@@ -83,6 +94,7 @@ class FaceView: UIView {
             return path
         }
     }
+    */
     
     private func pathForMouth() -> UIBezierPath {
         let mouthWidth = skullRadius / Ratios.SkullRadiusToMouthWidth
@@ -141,10 +153,10 @@ class FaceView: UIView {
         
         color.set()
         pathForCircleCenteredAtPoint(midPoind: skullCenter, withRadius: skullRadius).stroke()
-        
+        /*
         pathForEye(eye: .Left).stroke()
         pathForEye(eye: .Right).stroke()
-        
+        */
         pathForBrow(eye: .Left).stroke()
         pathForBrow(eye: .Right).stroke()
         
