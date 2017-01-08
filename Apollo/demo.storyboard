@@ -616,6 +616,85 @@
             </objects>
             <point key="canvasLocation" x="-7817" y="-1132"/>
         </scene>
+        <!--Sort View Controller-->
+        <scene sceneID="N6o-GR-E8v">
+            <objects>
+                <viewController storyboardIdentifier="Sort" id="VhX-SI-oWI" customClass="SortViewController" customModule="Apollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6EO-YX-YmY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z6s-iz-aBL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VK9-KV-QI3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXA-kJ-Dii" customClass="HistogramView" customModule="Apollo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="116" width="374" height="612"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cNH-v8-0nW">
+                                <rect key="frame" x="20" y="28" width="374" height="68"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qsZ-HD-oeM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6a-WH-7Za">
+                                                <rect key="frame" x="0.0" y="0.0" width="124.66666666666666" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-2L-cBl">
+                                                <rect key="frame" x="124.66666666666667" y="0.0" width="124.66666666666664" height="30"/>
+                                                <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="reset:" destination="VhX-SI-oWI" eventType="touchUpInside" id="dJo-fs-BNo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09H-In-Z8L">
+                                                <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666671" height="30"/>
+                                                <state key="normal" title="Sort"/>
+                                                <connections>
+                                                    <action selector="sortButtonTapped:" destination="VhX-SI-oWI" eventType="touchUpInside" id="DFN-R3-Vga"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XDq-zy-wgo">
+                                        <rect key="frame" x="0.0" y="40" width="374" height="29"/>
+                                        <segments>
+                                            <segment title="Bubble"/>
+                                            <segment title="Select"/>
+                                            <segment title="Insert"/>
+                                            <segment title="Shell"/>
+                                            <segment title="Heap"/>
+                                            <segment title="Merge"/>
+                                            <segment title="Quick"/>
+                                            <segment title="Radix"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z6s-iz-aBL" firstAttribute="top" secondItem="GXA-kJ-Dii" secondAttribute="bottom" constant="8" symbolic="YES" id="2BL-sm-dXW"/>
+                            <constraint firstAttribute="trailing" secondItem="cNH-v8-0nW" secondAttribute="trailing" constant="20" symbolic="YES" id="5ZE-yK-spu"/>
+                            <constraint firstItem="cNH-v8-0nW" firstAttribute="top" secondItem="6EO-YX-YmY" secondAttribute="bottom" constant="8" symbolic="YES" id="GBu-Qg-W4G"/>
+                            <constraint firstItem="GXA-kJ-Dii" firstAttribute="leading" secondItem="VK9-KV-QI3" secondAttribute="leadingMargin" id="Kby-fb-jwE"/>
+                            <constraint firstItem="GXA-kJ-Dii" firstAttribute="trailing" secondItem="VK9-KV-QI3" secondAttribute="trailingMargin" id="dKO-U8-b7m"/>
+                            <constraint firstItem="cNH-v8-0nW" firstAttribute="leading" secondItem="VK9-KV-QI3" secondAttribute="leading" constant="20" symbolic="YES" id="e2I-Yd-hR5"/>
+                            <constraint firstItem="GXA-kJ-Dii" firstAttribute="top" secondItem="cNH-v8-0nW" secondAttribute="bottom" constant="20" id="elP-JG-a5h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="histogramView" destination="GXA-kJ-Dii" id="2Bb-ns-SMJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDs-Uc-Hyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7144.9275362318849" y="-1132.3369565217392"/>
+        </scene>
         <!--Alamofire View Controller-->
         <scene sceneID="Smn-4g-qPm">
             <objects>
