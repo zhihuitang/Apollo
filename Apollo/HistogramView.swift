@@ -44,7 +44,7 @@ class HistogramView: UIView {
         rawData.forEach({ sum += CGFloat($0) })
         
         for i in 0...rawData.count - 1 {
-            print("bar \(i+1):  \(CGFloat(rawData[i]) * height / maxValue)")
+            //print("bar \(i+1):  \(CGFloat(rawData[i]) * height / maxValue)")
             let size = CGSize(width: width, height: CGFloat(rawData[i]) * height / maxValue)
             let origin = CGPoint(x: CGFloat(i) * width, y: 0)
             let bar = BarView(frame: CGRect(origin: origin, size: size))

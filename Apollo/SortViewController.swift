@@ -9,13 +9,21 @@
 import UIKit
 import Darwin
 
-let barSize = 50
-let barHeight = 100
 
-class SortViewController: BaseViewController {
+class SortViewController: BaseViewController, SortView {
 
     @IBOutlet weak var histogramView: HistogramView!
-    var sortMethod = BubbleSort()
+    var sortMethod: SortMethod = BubbleSort()
+    weak var weakSelf: SortViewController?
+    var barCount = 50
+    let barHeight = 200
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        weakSelf = self
+    }
+    
+    @IBOutlet weak var textCount: UITextField!
     
     var data: [Int] = [] {
         didSet {
@@ -29,7 +37,7 @@ class SortViewController: BaseViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        data = generate(size: barSize, range: barHeight)
+        data = generate(size: barCount, range: barHeight)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,16 +45,34 @@ class SortViewController: BaseViewController {
     }
     
     @IBAction func reset(_ sender: UIButton) {
-        data = generate(size: barSize, range: barHeight)
+        if let number = Int(textCount.text!) {
+            barCount = number
+        }
+        data = generate(size: barCount, range: barHeight)
     }
     @IBAction func sortButtonTapped(_ sender: UIButton) {
-        weak var weakSelf = self
         DispatchQueue.global().async {
-            let _ = self.sortMethod.sort(items: self.data) { (index,value) in
-                DispatchQueue.main.async {
-                    weakSelf?.histogramView.update(index: index, value: value)
-                }
-            }
+            let _ = self.sortMethod.sort(items: self.data, sortView: self)
+        }
+    }
+    
+    func barUpdated(index: Int, value: Int) {
+        DispatchQueue.main.async {
+            self.histogramView?.update(index: index, value: value)
+        }
+    }
+    func sortFinish(result: Array<Int>) {
+        DispatchQueue.main.async {
+            self.data = result
+        }
+        print("sort finish")
+    }
+    
+    @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
+        print("tapped: \(sender.titleForSegment(at: sender.selectedSegmentIndex)!)")
+        if let type = sender.titleForSegment(at: sender.selectedSegmentIndex), let sortType = SortTypeEnum(rawValue: type) {
+            
+            sortMethod = SortFactory.create(type: sortType)
         }
     }
 

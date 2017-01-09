@@ -642,7 +642,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="124.66666666666666" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-2L-cBl">
                                                 <rect key="frame" x="124.66666666666667" y="0.0" width="124.66666666666664" height="30"/>
@@ -672,6 +672,9 @@
                                             <segment title="Quick"/>
                                             <segment title="Radix"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentedControlTapped:" destination="VhX-SI-oWI" eventType="valueChanged" id="KrV-8e-YAI"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
@@ -689,6 +692,7 @@
                     </view>
                     <connections>
                         <outlet property="histogramView" destination="GXA-kJ-Dii" id="2Bb-ns-SMJ"/>
+                        <outlet property="textCount" destination="O6a-WH-7Za" id="K4F-NX-Be5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDs-Uc-Hyy" userLabel="First Responder" sceneMemberID="firstResponder"/>

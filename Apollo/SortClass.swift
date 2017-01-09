@@ -8,81 +8,53 @@
 
 import Foundation
 
+let SORT_INTEVAL = 0.005
 
-enum SortTypeEnum: Int {
-    case BubbleSort = 0     //冒泡排序
-    case SelectSort         //选择排序
-    case InsertSort         //插入排序
-    case ShellSort          //希尔排序
-    case HeapSort           //堆排序
-    case MergeSort          //归并排序
-    case QuickSort          //快速排序
-    case RadixSort          //快速排序
+enum SortTypeEnum: String {
+    case Bubble         //冒泡排序
+    case Select         //选择排序
+    case Insert         //插入排序
+    case Shell          //希尔排序
+    case Heap           //堆排序
+    case Merge          //归并排序
+    case Quick          //快速排序
+    case Radix          //快速排序
 }
 
 /// 排序类的简单工厂
 class SortFactory {
-    static func create(type: SortTypeEnum) -> SortType {
+    static func create(type: SortTypeEnum) -> SortMethod {
         switch type {
-        case .BubbleSort:
-//            return BubbleSort()
+        case .Bubble:
+            return BubbleSort()
+            
+        case .Select:
             return SimpleSelectionSort()
             
-        case .SelectSort:
-            return SimpleSelectionSort()
-            
-        case .InsertSort:
+        case .Insert:
             return InsertSort()
             
-        case .ShellSort:
+        case .Shell:
             return ShellSort()
             
-        case .HeapSort:
+        case .Heap:
             return HeapSort()
             
-        case .MergeSort:
+        case .Merge:
             return MergingSort()
             
-        case .QuickSort:
+        case .Quick:
             return QuickSort()
             
-        case .RadixSort:
+        case .Radix:
             return RadixSort()
         }
     }
 }
 
-
-typealias SortResultClosure = (_ index: Int, _ value: Int) -> Void
-typealias SortSuccessClosure = (Array<Int>) -> Void
-class SortBaseClass {
-    var everyStepClosure: SortResultClosure!
-    var sortSuccessClosure: SortSuccessClosure!
-    
-    func displayResult(index: Int, value: Int) {
-        if everyStepClosure != nil {
-            everyStepClosure(index, value)
-            Thread.sleep(forTimeInterval: 0.001)
-        }
-        
-    }
-    
-    func successSort(sortList:Array<Int>) -> Void {
-        if self.sortSuccessClosure != nil {
-            self.sortSuccessClosure(sortList)
-        }
-    }
-    
-    func setEveryStepClosure(everyStepClosure: @escaping SortResultClosure,
-                             sortSuccessClosure: @escaping SortSuccessClosure) -> Void {
-        self.everyStepClosure = everyStepClosure
-        self.sortSuccessClosure = sortSuccessClosure
-    }
-}
-
 /// 冒泡排序：时间复杂度----O(n^2)
-class BubbleSort: SortBaseClass {
-    func sort(items: Array<Int>, delegate: (Int, Int)->()) -> Array<Int> {
+class BubbleSort: SortMethod {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         //print("冒泡排序：")
         var list = items
         for i in 0..<list.count {
@@ -95,22 +67,22 @@ class BubbleSort: SortBaseClass {
                     
 //                    displayResult(index: j, value: list[j])
 //                    displayResult(index: j-1, value: list[j-1])
-                    delegate(j, list[j])
-                    delegate(j-1, list[j-1])
-                    Thread.sleep(forTimeInterval: 0.005)
+                    sortView.barUpdated(index: j, value: list[j])
+                    sortView.barUpdated(index: j-1, value: list[j-1])
+                    Thread.sleep(forTimeInterval: SORT_INTEVAL)
                 }
                 j = j - 1
             }
         }
-        self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
     }
 }
 
 
 /// 插入排序-O(n^2)
-class InsertSort: SortBaseClass, SortType{
-    func sort(items: Array<Int>) -> Array<Int> {
+class InsertSort: SortMethod{
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         //print("插入排序")
         var list = items
         for i in 1..<list.count {   //循环无序数列
@@ -124,9 +96,10 @@ class InsertSort: SortBaseClass, SortType{
                     list[j] = list[j-1]
                     list[j-1] = temp
                     
-                    displayResult(index: j, value: list[j])
-                    displayResult(index: j-1, value: list[j-1])
-                    
+                    sortView.barUpdated(index: j, value: list[j])
+                    sortView.barUpdated(index: j-1, value: list[j-1])
+                    Thread.sleep(forTimeInterval: SORT_INTEVAL)
+
                     j = j - 1
                 } else {
                     break
@@ -135,14 +108,14 @@ class InsertSort: SortBaseClass, SortType{
             //print("插入的位置为：\(j)")
             //print("本轮插入完毕, 插入结果为：\n\(list)\n")
         }
-        self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
     }
 }
 
 //希尔排序：时间复杂度----O(n^(3/2))
-class ShellSort: SortBaseClass, SortType {
-    func sort(items: Array<Int>) -> Array<Int> {
+class ShellSort: SortMethod {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         //print("希尔排序")
         var list = items
         var step: Int = list.count / 2
@@ -156,8 +129,10 @@ class ShellSort: SortBaseClass, SortType {
                         list[j] = list[j-step]
                         list[j-step] = temp
                         
-                        displayResult(index: j, value: list[j])
-                        displayResult(index: j-step, value: list[j-step])
+                        sortView.barUpdated(index: j, value: list[j])
+                        sortView.barUpdated(index: j-step, value: list[j-step])
+                        Thread.sleep(forTimeInterval: SORT_INTEVAL)
+
                         
                         j = j - step
                     } else {
@@ -169,14 +144,14 @@ class ShellSort: SortBaseClass, SortType {
             //print("本轮排序结果为：\(list)\n")
             step = step / 2     //缩小步长
         }
-        self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
     }
 }
 
 /// 简单选择排序－O(n^2)
-class SimpleSelectionSort: SortBaseClass, SortType {
-    func sort(items: Array<Int>) -> Array<Int> {
+class SimpleSelectionSort: SortMethod {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         //print("简单选择排序")
         var list = items
         for i in 0..<list.count {
@@ -191,7 +166,9 @@ class SimpleSelectionSort: SortBaseClass, SortType {
                     minValue = list[j]
                     minIndex = j
                 }
-                displayResult(index: j, value: list[j])
+                sortView.barUpdated(index: j, value: list[j])
+                Thread.sleep(forTimeInterval: SORT_INTEVAL)
+
                 j = j + 1
             }
             //print("在后半部分乱序数列中，最小值为：\(minValue), 下标为：\(minIndex)")
@@ -202,12 +179,15 @@ class SimpleSelectionSort: SortBaseClass, SortType {
                 list[i] = list[minIndex]
                 list[minIndex] = temp
                 
-                displayResult(index: i, value: list[i])
-                displayResult(index: minIndex, value: list[minIndex])
+                sortView.barUpdated(index: i, value: list[i])
+                sortView.barUpdated(index: minIndex, value: list[minIndex])
+                Thread.sleep(forTimeInterval: SORT_INTEVAL)
+
             }
             //print("本轮结果为：\(list)\n")
         }
-        self.successSort(sortList: list)
+        //self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
         
     }
@@ -216,15 +196,15 @@ class SimpleSelectionSort: SortBaseClass, SortType {
 
 
 /// 堆排序 (O(nlogn))
-class HeapSort: SortBaseClass, SortType {
+class HeapSort: SortMethod {
     
-    func sort(items: Array<Int>) -> Array<Int> {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         //print("堆排序：\(items)")
         var list = items
         var endIndex = items.count - 1
         
         //创建大顶堆，其实就是将list转换成大顶堆层次的遍历结果
-        heapCreate(items: &list)
+        heapCreate(items: &list, sortView: sortView)
 
         //print("原始堆：\(list)")
         while endIndex >= 0 {
@@ -234,16 +214,17 @@ class HeapSort: SortBaseClass, SortType {
             list[0] = list[endIndex]
             list[endIndex] = temp
             
-            displayResult(index: 0, value: list[0])
-            displayResult(index: endIndex, value: list[endIndex])
-            
+            sortView.barUpdated(index: 0, value: list[0])
+            sortView.barUpdated(index: endIndex, value: list[endIndex])
+            Thread.sleep(forTimeInterval: SORT_INTEVAL)
             endIndex -= 1   //缩小大顶堆的范围
             
             //对交换后的大顶堆进行调整，使其重新成为大顶堆
-            heapAdjast(items: &list, startIndex: 0,endIndex: endIndex + 1)
+            heapAdjast(items: &list, startIndex: 0,endIndex: endIndex + 1, sortView: sortView)
             //print("调整后:\(list)\n")
         }
-        self.successSort(sortList: list)
+        //self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
     }
     
@@ -251,10 +232,10 @@ class HeapSort: SortBaseClass, SortType {
     /// 构建大顶堆的层次遍历序列（f(i) > f(2i), f(i) > f(2i+1) i > 0）
     ///
     /// - parameter items:    构建大顶堆的序列
-    func heapCreate(items: inout Array<Int>) {
+    func heapCreate(items: inout Array<Int>, sortView: SortView) {
         var i = items.count
         while i > 0 {
-            heapAdjast(items: &items, startIndex: i - 1, endIndex:items.count )
+            heapAdjast(items: &items, startIndex: i - 1, endIndex:items.count, sortView: sortView )
             i -= 1
         }
     }
@@ -263,7 +244,7 @@ class HeapSort: SortBaseClass, SortType {
     ///
     /// - parameter items:    list
     /// - parameter endIndex: 当前要调整的节点
-    func heapAdjast(items: inout Array<Int>, startIndex: Int, endIndex: Int) {
+    func heapAdjast(items: inout Array<Int>, startIndex: Int, endIndex: Int, sortView: SortView) {
         let temp = items[startIndex]
         var fatherIndex = startIndex + 1                 //父节点下标
         var maxChildIndex = 2 * fatherIndex //左孩子下标
@@ -276,7 +257,8 @@ class HeapSort: SortBaseClass, SortType {
             //如果较大的那个子节点比根节点大，就将该节点的值赋给父节点
             if temp < items[maxChildIndex-1] {
                 items[fatherIndex-1] = items[maxChildIndex-1]
-                displayResult(index: fatherIndex-1, value: items[fatherIndex-1])
+                sortView.barUpdated(index: fatherIndex-1, value: items[fatherIndex-1])
+                Thread.sleep(forTimeInterval: SORT_INTEVAL)
             } else {
                 break
             }
@@ -284,7 +266,8 @@ class HeapSort: SortBaseClass, SortType {
             maxChildIndex = 2 * fatherIndex
         }
         items[fatherIndex-1] = temp
-        displayResult(index: fatherIndex-1, value: items[fatherIndex-1])
+        sortView.barUpdated(index: fatherIndex-1, value: items[fatherIndex-1])
+        Thread.sleep(forTimeInterval: SORT_INTEVAL)
     }
 
 }
@@ -292,9 +275,9 @@ class HeapSort: SortBaseClass, SortType {
 
 
 /// 归并排序O(nlogn)
-class MergingSort: SortBaseClass, SortType {
+class MergingSort: SortMethod {
     var tempArray: Array<Array<Int>> = []
-    func sort(items: Array<Int>) -> Array<Int> {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         tempArray.removeAll()
         //将数组中的每一个元素放入一个数组中
         for item in items {
@@ -311,14 +294,17 @@ class MergingSort: SortBaseClass, SortType {
                 tempArray[i] = mergeArray(firstList: tempArray[i], secondList: tempArray[i + 1])
                 tempArray.remove(at: i + 1)
                 for subIndex in 0..<tempArray[i].count{
-                   let index = self.countSubItemIndex(endIndex: i, subItemIndex: subIndex)
-                   self.displayResult(index: index, value: tempArray[i][subIndex])
+                    let index = self.countSubItemIndex(endIndex: i, subItemIndex: subIndex)
+                    sortView.barUpdated(index: index, value: tempArray[i][subIndex])
+                    Thread.sleep(forTimeInterval: SORT_INTEVAL)
+                    
                     
                 }
                 i = i + 1
             }
         }
-        self.successSort(sortList: tempArray.first!)
+        //self.successSort(sortList: tempArray.first!)
+        sortView.sortFinish(result: tempArray.first!)
         return tempArray.first!
     }
     
@@ -369,13 +355,14 @@ class MergingSort: SortBaseClass, SortType {
 
 
 /// 快速排序O(nlogn)
-class QuickSort: SortBaseClass, SortType {
-    func sort(items: Array<Int>) -> Array<Int> {
+class QuickSort: SortMethod {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         var list = items
         //print("快速排序开始：")
-        quickSort(list: &list, low: 0, high: list.count-1)
+        quickSort(list: &list, low: 0, high: list.count-1, sortView: sortView)
         //print("快速排序结束！")
-        self.successSort(sortList: list)
+        //self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
     }
     
@@ -385,11 +372,11 @@ class QuickSort: SortBaseClass, SortType {
     /// - parameter list: 要排序的数组
     /// - parameter low: 数组的上界
     /// - parameter high: <#high description#>
-    private func quickSort(list: inout Array<Int>, low: Int, high: Int) {
+    private func quickSort(list: inout Array<Int>, low: Int, high: Int,  sortView: SortView) {
         if low < high {
-            let mid = partition(list: &list, low: low, high: high)
-            quickSort(list: &list, low: low, high: mid - 1)   //递归前半部分
-            quickSort(list: &list, low: mid + 1, high: high)  //递归后半部分
+            let mid = partition(list: &list, low: low, high: high, sortView: sortView)
+            quickSort(list: &list, low: low, high: mid - 1, sortView: sortView)   //递归前半部分
+            quickSort(list: &list, low: mid + 1, high: high, sortView: sortView)  //递归后半部分
         }
     }
     
@@ -401,7 +388,7 @@ class QuickSort: SortBaseClass, SortType {
     ///
     /// - returns: 分界点
 
-    private func partition(list: inout Array<Int>, low: Int, high: Int) -> Int {
+    private func partition(list: inout Array<Int>, low: Int, high: Int,  sortView: SortView) -> Int {
         var low = low
         var high = high
         let temp = list[low]
@@ -412,34 +399,38 @@ class QuickSort: SortBaseClass, SortType {
                 high -= 1
             }
             list[low] = list[high]
-            displayResult(index: low, value: list[low])
+            sortView.barUpdated(index: low, value: list[low])
             
             while low < high && list[low] <= temp {
                 low += 1
             }
             list[high] = list[low]
-            displayResult(index: high, value: list[high])
+            sortView.barUpdated(index: high, value: list[high])
+            Thread.sleep(forTimeInterval: SORT_INTEVAL)
         }
         list[low] = temp
-        displayResult(index: low, value: list[low])
+        sortView.barUpdated(index: low, value: list[low])
+        Thread.sleep(forTimeInterval: SORT_INTEVAL)
         //print("mid[\(low)]:\(list[low])")
         //print("\(list)\n")
+        sortView.sortFinish(result: list)
         return low
     }
 }
 
 //基数排序
-class RadixSort: SortBaseClass, SortType {
-    func sort(items: Array<Int>) -> Array<Int> {
+class RadixSort: SortMethod {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int> {
         var list = items
         if list.count > 0 {
-            radixSort(list: &list)
+            radixSort(list: &list, sortView: sortView)
         }
-        self.successSort(sortList: list)
+        //self.successSort(sortList: list)
+        sortView.sortFinish(result: list)
         return list
     }
     
-    private func radixSort(list: inout Array<Int>) {
+    private func radixSort(list: inout Array<Int>, sortView: SortView) {
         var bucket = createBucket()
         let maxNumber = listMaxItem(list: list)
         let maxLength = numberLength(number: maxNumber)
@@ -456,11 +447,15 @@ class RadixSort: SortBaseClass, SortType {
             for i in 0..<bucket.count {
                 while !bucket[i].isEmpty {
                     list[index] = bucket[i].remove(at: 0)
-                    displayResult(index: index, value: list[index])
+                    sortView.barUpdated(index: index, value: list[index])
+                    Thread.sleep(forTimeInterval: SORT_INTEVAL)
                     index += 1
                 }
             }
         }
+        
+        
+        
     }
     
     /// 创建10个桶

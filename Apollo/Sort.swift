@@ -8,8 +8,11 @@
 
 import Foundation
 
-protocol SortType {
-    func sort(items: Array<Int>) -> Array<Int>
-    func setEveryStepClosure(everyStepClosure: @escaping SortResultClosure,
-                             sortSuccessClosure: @escaping SortSuccessClosure) -> Void
+protocol SortView {
+    func sortFinish(result: Array<Int>)
+    func barUpdated(index: Int, value: Int)
+}
+
+protocol SortMethod {
+    func sort(items: Array<Int>, sortView: SortView) -> Array<Int>
 }
