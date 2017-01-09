@@ -269,7 +269,6 @@ class HeapSort: SortMethod {
         sortView.barUpdated(index: fatherIndex-1, value: items[fatherIndex-1])
         Thread.sleep(forTimeInterval: SORT_INTEVAL)
     }
-
 }
 
 
@@ -452,10 +451,7 @@ class RadixSort: SortMethod {
                     index += 1
                 }
             }
-        }
-        
-        
-        
+        }                    
     }
     
     /// 创建10个桶

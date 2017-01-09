@@ -631,28 +631,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXA-kJ-Dii" customClass="HistogramView" customModule="Apollo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="116" width="374" height="612"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="count">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="size">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barCount">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cNH-v8-0nW">
                                 <rect key="frame" x="20" y="28" width="374" height="68"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qsZ-HD-oeM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qsZ-HD-oeM">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6a-WH-7Za">
-                                                <rect key="frame" x="0.0" y="0.0" width="124.66666666666666" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Histogram Size" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O6a-WH-7Za">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-2L-cBl">
-                                                <rect key="frame" x="124.66666666666667" y="0.0" width="124.66666666666664" height="30"/>
+                                                <rect key="frame" x="224" y="0.0" width="70" height="30"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="reset:" destination="VhX-SI-oWI" eventType="touchUpInside" id="dJo-fs-BNo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09H-In-Z8L">
-                                                <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666671" height="30"/>
+                                                <rect key="frame" x="304" y="0.0" width="70" height="30"/>
                                                 <state key="normal" title="Sort"/>
                                                 <connections>
                                                     <action selector="sortButtonTapped:" destination="VhX-SI-oWI" eventType="touchUpInside" id="DFN-R3-Vga"/>
@@ -693,6 +704,7 @@
                     <connections>
                         <outlet property="histogramView" destination="GXA-kJ-Dii" id="2Bb-ns-SMJ"/>
                         <outlet property="textCount" destination="O6a-WH-7Za" id="K4F-NX-Be5"/>
+                        <outlet property="textFieldSize" destination="O6a-WH-7Za" id="C9u-3E-X3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDs-Uc-Hyy" userLabel="First Responder" sceneMemberID="firstResponder"/>

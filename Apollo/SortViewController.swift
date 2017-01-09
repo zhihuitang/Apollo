@@ -10,13 +10,18 @@ import UIKit
 import Darwin
 
 
-class SortViewController: BaseViewController, SortView {
+class SortViewController: BaseViewController, SortView, UITextFieldDelegate {
 
+    @IBOutlet weak var textFieldSize: UITextField!
     @IBOutlet weak var histogramView: HistogramView!
     var sortMethod: SortMethod = BubbleSort()
     weak var weakSelf: SortViewController?
-    var barCount = 50
-    let barHeight = 200
+    var histogrameSize: Int? {
+        didSet{
+            self.histogramView.barCount = histogrameSize!
+        }
+    }
+    let barHeight = 100
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,12 +38,14 @@ class SortViewController: BaseViewController, SortView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        textFieldSize.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textFieldSize.resignFirstResponder()
+        return true
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        data = generate(size: barCount, range: barHeight)
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,13 +53,12 @@ class SortViewController: BaseViewController, SortView {
     
     @IBAction func reset(_ sender: UIButton) {
         if let number = Int(textCount.text!) {
-            barCount = number
+            histogrameSize = number
         }
-        data = generate(size: barCount, range: barHeight)
     }
     @IBAction func sortButtonTapped(_ sender: UIButton) {
         DispatchQueue.global().async {
-            let _ = self.sortMethod.sort(items: self.data, sortView: self)
+            let _ = self.sortMethod.sort(items: self.histogramView.rawData, sortView: self)
         }
     }
     
@@ -78,14 +84,6 @@ class SortViewController: BaseViewController, SortView {
 
     private func updateHistogram() {
         histogramView.rawData = data
-    }
-    
-    private func generate(size length: Int, range: Int) -> [Int] {
-        var result: [Int] = []
-        for _ in 1..<length {
-            result.append(Int(arc4random_uniform(UInt32(range))))
-        }
-        return result
     }
 
 }

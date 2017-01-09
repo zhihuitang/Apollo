@@ -8,10 +8,18 @@
 
 import UIKit
 
+@IBDesignable
 class HistogramView: UIView {
 
-    var count: Int = 0
-    var rawData: [Int] = [0] {
+    @IBInspectable
+    var barCount: Int = 0 {
+        didSet{
+            rawData = self.randomData(size: barCount, range: 100)
+            setNeedsDisplay()
+        }
+    }
+
+    var rawData: [Int] = [1] {
         didSet {
             initBars()
         }
@@ -29,10 +37,7 @@ class HistogramView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
-    override func awakeFromNib() {
-        //initBars()
-    }
+
     private func initBars() {
         let width = self.frame.width / CGFloat(rawData.count)
         let height = self.frame.height
@@ -52,10 +57,22 @@ class HistogramView: UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        initBars()
+    }
+    
     func update(index: Int, value: Int) {
         guard index < self.subviews.count else { return }
         let subView = self.subviews[index]
         subView.frame.size.height = CGFloat(value) * self.frame.height / maxValue
         
+    }
+    
+    private func randomData(size length: Int, range: Int) -> [Int] {
+        var result: [Int] = []
+        for _ in 0..<length {
+            result.append(Int(arc4random_uniform(UInt32(range))))
+        }
+        return result
     }
 }
