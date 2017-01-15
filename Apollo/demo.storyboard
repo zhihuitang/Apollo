@@ -106,7 +106,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tkk-fz-gx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="GaO-E0-Y76">
                     <connections>
-                        <action selector="toggleEyes:" destination="4pl-1l-YBI" id="PGF-DS-pw8"/>
+                        <action selector="headShake:" destination="4pl-1l-YBI" id="hf1-eU-upA"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

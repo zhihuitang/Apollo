@@ -101,6 +101,44 @@ class FaceViewController: BaseViewController {
             Timer.scheduledTimer(timeInterval: BlinkingRate.OpenDuration, target: self, selector: #selector(FaceViewController.startBlink), userInfo: nil, repeats: false)
         }
     }
+    @IBAction func toggleEye(_ recognizer: UITapGestureRecognizer) {
+        if recognizer.state == .ended {
+            switch expression.eyes {
+            case .Open: expression.eyes = .Closed
+            case .Closed: expression.eyes = .Open
+            case .Squinting: break
+            }
+        }
+    }
+    @IBAction func headShake(_ sender: UITapGestureRecognizer) {
+        UIView.animate(
+            withDuration: Animation.ShakeDuation,
+            animations: {
+                self.faceView.transform = CGAffineTransform(rotationAngle: Animation.ShakeAngle)
+            }) { (finished) in
+            //
+            UIView.animate(
+                withDuration: Animation.ShakeDuation,
+                animations: {
+                    self.faceView.transform = CGAffineTransform(rotationAngle: -Animation.ShakeAngle)
+                }) { (finished) in
+                //
+                    UIView.animate(
+                        withDuration: Animation.ShakeDuation,
+                        animations: {
+                            self.faceView.transform = CGAffineTransform(rotationAngle: 0)
+                    }) { (finished) in
+                    //
+                }
+            }
+        }
+    }
+    
+    private struct Animation {
+        static let ShakeAngle = CGFloat(M_PI/6)
+        static let ShakeDuation = 0.5
+    }
+    
 }
 
 extension FaceViewController {
