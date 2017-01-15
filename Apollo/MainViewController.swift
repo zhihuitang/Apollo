@@ -37,6 +37,7 @@ class MainViewController: UITableViewController {
         demos.append("Timer")
         demos.append("LocalNotification")
         demos.append("Sort")
+        demos.append("DropIt")
     }
     
     // MARK: - Table view data source

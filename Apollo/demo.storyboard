@@ -711,6 +711,39 @@
             </objects>
             <point key="canvasLocation" x="-7144.9275362318849" y="-1132.3369565217392"/>
         </scene>
+        <!--Drop It View Controller-->
+        <scene sceneID="SvM-SD-HIF">
+            <objects>
+                <viewController storyboardIdentifier="DropIt" id="7RZ-A0-t5j" customClass="DropItViewController" customModule="Apollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bWT-Uc-VsG"/>
+                        <viewControllerLayoutGuide type="bottom" id="aAm-68-W59"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uiT-Jb-Eaj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPB-YT-FnD" customClass="DropItView" customModule="Apollo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yPB-YT-FnD" firstAttribute="bottom" secondItem="aAm-68-W59" secondAttribute="top" id="6OR-dd-C1v"/>
+                            <constraint firstAttribute="trailing" secondItem="yPB-YT-FnD" secondAttribute="trailing" id="Kq0-Qk-Vo0"/>
+                            <constraint firstItem="yPB-YT-FnD" firstAttribute="top" secondItem="uiT-Jb-Eaj" secondAttribute="top" id="eoQ-Nu-lXb"/>
+                            <constraint firstItem="yPB-YT-FnD" firstAttribute="leading" secondItem="uiT-Jb-Eaj" secondAttribute="leading" id="neN-kL-RsT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="yPB-YT-FnD" id="czz-pt-3kj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sha-VD-JQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6486.9565217391309" y="-1132.3369565217392"/>
+        </scene>
         <!--Alamofire View Controller-->
         <scene sceneID="Smn-4g-qPm">
             <objects>

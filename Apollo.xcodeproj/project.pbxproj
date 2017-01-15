@@ -25,6 +25,11 @@
 		026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1701E21A5F600C0E3F3 /* SortViewController.swift */; };
 		026BD1731E21A7E600C0E3F3 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1721E21A7E600C0E3F3 /* BarView.swift */; };
 		026BD1751E21A91B00C0E3F3 /* HistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1741E21A91B00C0E3F3 /* HistogramView.swift */; };
+		026C9DA61E2C0AD700DDDD53 /* DropItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9DA51E2C0AD700DDDD53 /* DropItViewController.swift */; };
+		026C9DA81E2C0BE700DDDD53 /* DropItView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9DA71E2C0BE700DDDD53 /* DropItView.swift */; };
+		026C9DAB1E2C0D5400DDDD53 /* UIKit Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9DAA1E2C0D5400DDDD53 /* UIKit Extension.swift */; };
+		026C9DAD1E2C13F400DDDD53 /* FallingObjectBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9DAC1E2C13F400DDDD53 /* FallingObjectBehavior.swift */; };
+		026C9DAF1E2C1B0500DDDD53 /* NamedBezierPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9DAE1E2C1B0500DDDD53 /* NamedBezierPathsView.swift */; };
 		02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D331E03E43D00D3820B /* BaseViewController.swift */; };
 		02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D351E03E56300D3820B /* CustomViewViewController.swift */; };
 		02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02898D371E03E57500D3820B /* AlamofireViewController.swift */; };
@@ -74,6 +79,11 @@
 		026BD1701E21A5F600C0E3F3 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		026BD1721E21A7E600C0E3F3 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		026BD1741E21A91B00C0E3F3 /* HistogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistogramView.swift; sourceTree = "<group>"; };
+		026C9DA51E2C0AD700DDDD53 /* DropItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItViewController.swift; sourceTree = "<group>"; };
+		026C9DA71E2C0BE700DDDD53 /* DropItView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItView.swift; sourceTree = "<group>"; };
+		026C9DAA1E2C0D5400DDDD53 /* UIKit Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit Extension.swift"; sourceTree = "<group>"; };
+		026C9DAC1E2C13F400DDDD53 /* FallingObjectBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingObjectBehavior.swift; sourceTree = "<group>"; };
+		026C9DAE1E2C1B0500DDDD53 /* NamedBezierPathsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamedBezierPathsView.swift; path = DropIt/NamedBezierPathsView.swift; sourceTree = "<group>"; };
 		02898D331E03E43D00D3820B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		02898D351E03E56300D3820B /* CustomViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewViewController.swift; sourceTree = "<group>"; };
 		02898D371E03E57500D3820B /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +152,8 @@
 				026BD1721E21A7E600C0E3F3 /* BarView.swift */,
 				022D10951E0BD229001BDFBB /* EyeView.swift */,
 				026BD1741E21A91B00C0E3F3 /* HistogramView.swift */,
+				026C9DA71E2C0BE700DDDD53 /* DropItView.swift */,
+				026C9DAE1E2C1B0500DDDD53 /* NamedBezierPathsView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -152,6 +164,7 @@
 				021BCEF71E22EF8800A4F0A6 /* Sort */,
 				023C15451E041DFC00E5B4C1 /* FacialExpression.swift */,
 				0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */,
+				026C9DAC1E2C13F400DDDD53 /* FallingObjectBehavior.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,10 +177,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		026C9DA91E2C0D4300DDDD53 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				026C9DAA1E2C0D5400DDDD53 /* UIKit Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		02898D391E03E93000D3820B /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
 				02898D331E03E43D00D3820B /* BaseViewController.swift */,
+				026C9DA51E2C0AD700DDDD53 /* DropItViewController.swift */,
 				02898D371E03E57500D3820B /* AlamofireViewController.swift */,
 				02898D351E03E56300D3820B /* CustomViewViewController.swift */,
 				023C152D1E03EBAD00E5B4C1 /* CalculatorViewController.swift */,
@@ -217,6 +239,7 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
+				026C9DA91E2C0D4300DDDD53 /* Extension */,
 				026BD16F1E21A59B00C0E3F3 /* Resources */,
 				0204F7221E068F8800ECCB85 /* Tools */,
 				02F011151E03E1F400D730D8 /* MainViewController.swift */,
@@ -388,19 +411,24 @@
 			files = (
 				023C15411E03FECE00E5B4C1 /* FaceViewController.swift in Sources */,
 				02F011161E03E1F400D730D8 /* MainViewController.swift in Sources */,
+				026C9DAD1E2C13F400DDDD53 /* FallingObjectBehavior.swift in Sources */,
 				026BD1731E21A7E600C0E3F3 /* BarView.swift in Sources */,
+				026C9DA61E2C0AD700DDDD53 /* DropItViewController.swift in Sources */,
 				026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */,
 				02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */,
 				02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */,
 				02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */,
+				026C9DA81E2C0BE700DDDD53 /* DropItView.swift in Sources */,
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
 				021BCEF61E22EF8300A4F0A6 /* SortClass.swift in Sources */,
 				0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */,
 				023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */,
+				026C9DAF1E2C1B0500DDDD53 /* NamedBezierPathsView.swift in Sources */,
 				022D10961E0BD229001BDFBB /* EyeView.swift in Sources */,
 				021BCEF51E22EF8300A4F0A6 /* Sort.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
+				026C9DAB1E2C0D5400DDDD53 /* UIKit Extension.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
 				023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */,
 				0204F7211E058CE200ECCB85 /* CalculatorBrain.swift in Sources */,
