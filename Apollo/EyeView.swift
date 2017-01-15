@@ -20,8 +20,8 @@ class EyeView: UIView {
             path = UIBezierPath(ovalIn: bounds.insetBy(dx: lineWidth/2, dy: lineWidth/2))
         } else {
             path = UIBezierPath()
-            path.move(to: CGPoint(x: bounds.minX, y: bounds.minY))
-            path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.maxY))
+            path.move(to: CGPoint(x: bounds.minX, y: bounds.midY))
+            path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.midY))
         }
         
         path.lineWidth = lineWidth

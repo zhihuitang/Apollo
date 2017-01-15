@@ -15,7 +15,7 @@ class FaceView: UIView {
     @IBInspectable
     var mouthCurvature: Double = 1.0 { didSet { setNeedsDisplay() } } // 1 full smile, -1 full frown
     @IBInspectable
-    var eyesOpen: Bool = true { didSet { setNeedsDisplay() } }
+    var eyesOpen: Bool = true { didSet { leftEye.eyesOpen = eyesOpen; rightEye.eyesOpen = eyesOpen } }
     @IBInspectable
     var eyeBrowTilt: Double = -0.5 { didSet { setNeedsDisplay() } }  //-1, 1
     @IBInspectable
@@ -74,12 +74,25 @@ class FaceView: UIView {
     
     private func createEye() -> EyeView{
         let eye = EyeView()
-        eye.isOpaque = true
+        eye.isOpaque = false
         eye.color = color
         eye.lineWidth = linewidth
         self.addSubview(eye)
         return eye
     }
+    
+    private func positionEye(eye: EyeView, center: CGPoint) {
+        let size = skullRadius / Ratios.SkullRadiusToEyeRadius * 2
+        eye.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: size, height: size))
+        eye.center = center
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        positionEye(eye: leftEye, center: getEyeCenter(eye: .Left))
+        positionEye(eye: rightEye, center: getEyeCenter(eye: .Right))
+    }
+    
     /*
     private func pathForEye(eye: Eye) -> UIBezierPath {
         let eyeRadius = skullRadius / Ratios.SkullRadiusToEyeRadius
