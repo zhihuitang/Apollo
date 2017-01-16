@@ -13,6 +13,7 @@ class DropItViewController: BaseViewController {
         didSet {            
             gameView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addDrop(recognizer:))))
             gameView.addGestureRecognizer(UIPanGestureRecognizer(target: gameView, action: #selector(gameView.grabDrop(recognizer:))))
+            gameView.realGravity = true
         }
     }
     
