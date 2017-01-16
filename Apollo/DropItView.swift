@@ -34,6 +34,44 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate {
         return CGSize(width: size, height: size)
     }
     
+    
+    private var attachment: UIAttachmentBehavior? {
+        willSet {
+            if attachment != nil {
+                animator.removeBehavior(attachment!)
+                bezierPaths[PathNames.Attachment] = nil
+            }
+        }
+        didSet {
+            if attachment != nil {
+                animator.addBehavior(attachment!)
+                attachment!.action = { [unowned self] in
+                    if let attachedDrop = self.attachment!.items.first as? UIView {
+                        self.bezierPaths[PathNames.Attachment] = UIBezierPath.lineFrom(self.attachment!.anchorPoint, to: attachedDrop.center)
+                    }
+                }
+            }
+        }
+    }
+    
+    private var lastDrop: UIView?
+    
+    func grabDrop(recognizer: UIPanGestureRecognizer) {
+        let gesturePoint = recognizer.location(in: self)
+        switch recognizer.state {
+        case .began:
+            // create the attachment
+            if let dropToAttachTo = lastDrop, dropToAttachTo.superview != nil {
+                attachment = UIAttachmentBehavior(item: dropToAttachTo, attachedToAnchor: gesturePoint)
+            }
+            lastDrop = nil
+        case .changed:
+            // change the attachement's anchor point
+            attachment?.anchorPoint = gesturePoint
+        default:
+            attachment = nil
+        }
+    }
     func addDrop() {
         var frame = CGRect(origin: CGPoint.zero, size: dropSize)
         frame.origin.x = CGFloat.random(dropsPerRow) * dropSize.width
@@ -43,6 +81,7 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate {
         
         addSubview(drop)
         dropBehavior.addItem(item: drop)
+        lastDrop = drop
     }
     
     private func removeCompletedRow(){
@@ -81,6 +120,7 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate {
     
     private struct PathNames {
         static let MiddleBarrier = "Middle Barrier"
+        static let Attachment = "Attachment"
     }
     
     override func layoutSubviews() {

@@ -10,9 +10,9 @@ import UIKit
 
 class DropItViewController: BaseViewController {
     @IBOutlet weak var gameView: DropItView! {
-        didSet {
-            
+        didSet {            
             gameView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addDrop(recognizer:))))
+            gameView.addGestureRecognizer(UIPanGestureRecognizer(target: gameView, action: #selector(gameView.grabDrop(recognizer:))))
         }
     }
     
