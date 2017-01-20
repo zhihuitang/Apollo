@@ -38,6 +38,7 @@ class MainViewController: UITableViewController {
         demos.append("LocalNotification")
         demos.append("Sort")
         demos.append("DropIt")
+        demos.append("GPXDemo")
     }
     
     // MARK: - Table view data source

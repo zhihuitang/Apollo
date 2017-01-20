@@ -744,6 +744,38 @@
             </objects>
             <point key="canvasLocation" x="-6486.9565217391309" y="-1132.3369565217392"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="5UU-Ki-wJ9">
+            <objects>
+                <viewController storyboardIdentifier="GPXDemo" id="2WF-DF-WHI" customClass="GPXViewController" customModule="Apollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xaQ-dA-itM"/>
+                        <viewControllerLayoutGuide type="bottom" id="gir-a3-1gC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8CM-di-cEv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc6-dZ-9t7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jc6-dZ-9t7" firstAttribute="top" secondItem="8CM-di-cEv" secondAttribute="top" id="AiG-zm-xbn"/>
+                            <constraint firstAttribute="trailing" secondItem="Jc6-dZ-9t7" secondAttribute="trailing" id="PMr-e8-LIb"/>
+                            <constraint firstItem="Jc6-dZ-9t7" firstAttribute="bottom" secondItem="gir-a3-1gC" secondAttribute="top" id="ZFK-gy-au5"/>
+                            <constraint firstItem="Jc6-dZ-9t7" firstAttribute="leading" secondItem="8CM-di-cEv" secondAttribute="leading" id="sod-Ko-bad"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Jc6-dZ-9t7" id="2KF-xO-COS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9r-n1-1F4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5814.4927536231889" y="-1129.0760869565217"/>
+        </scene>
         <!--Alamofire View Controller-->
         <scene sceneID="Smn-4g-qPm">
             <objects>

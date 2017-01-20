@@ -20,6 +20,9 @@
 		023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15421E03FF8B00E5B4C1 /* FaceView.swift */; };
 		023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15451E041DFC00E5B4C1 /* FacialExpression.swift */; };
 		023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */; };
+		025668EE1E32397F003966E2 /* GPXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668ED1E32397F003966E2 /* GPXViewController.swift */; };
+		025668F01E323D96003966E2 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668EF1E323D96003966E2 /* GPX.swift */; };
+		025668F21E3242FB003966E2 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668F11E3242FB003966E2 /* MKGPX.swift */; };
 		02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */; };
 		026BD16E1E21A4EE00C0E3F3 /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 026BD16D1E21A4EE00C0E3F3 /* applelogo.png */; };
 		026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1701E21A5F600C0E3F3 /* SortViewController.swift */; };
@@ -74,6 +77,9 @@
 		023C15421E03FF8B00E5B4C1 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 		023C15451E041DFC00E5B4C1 /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchViewController.swift; sourceTree = "<group>"; };
+		025668ED1E32397F003966E2 /* GPXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPXViewController.swift; path = GPX/GPXViewController.swift; sourceTree = "<group>"; };
+		025668EF1E323D96003966E2 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
+		025668F11E3242FB003966E2 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKGPX.swift; path = GPX/MKGPX.swift; sourceTree = "<group>"; };
 		02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		026BD16D1E21A4EE00C0E3F3 /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		026BD1701E21A5F600C0E3F3 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				0204F7231E068FB600ECCB85 /* DictManager.swift */,
+				025668EF1E323D96003966E2 /* GPX.swift */,
+				025668F11E3242FB003966E2 /* MKGPX.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -198,6 +206,7 @@
 				02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */,
 				02F861491E21547900F18FBC /* LocalNotificationViewController.swift */,
 				026BD1701E21A5F600C0E3F3 /* SortViewController.swift */,
+				025668ED1E32397F003966E2 /* GPXViewController.swift */,
 			);
 			name = DemoViewController;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025668EE1E32397F003966E2 /* GPXViewController.swift in Sources */,
 				023C15411E03FECE00E5B4C1 /* FaceViewController.swift in Sources */,
 				02F011161E03E1F400D730D8 /* MainViewController.swift in Sources */,
 				026C9DAD1E2C13F400DDDD53 /* FallingObjectBehavior.swift in Sources */,
@@ -429,6 +439,7 @@
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
 				026C9DAB1E2C0D5400DDDD53 /* UIKit Extension.swift in Sources */,
+				025668F01E323D96003966E2 /* GPX.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
 				023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */,
 				0204F7211E058CE200ECCB85 /* CalculatorBrain.swift in Sources */,
@@ -436,6 +447,7 @@
 				023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */,
 				023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */,
 				026BD1751E21A91B00C0E3F3 /* HistogramView.swift in Sources */,
+				025668F21E3242FB003966E2 /* MKGPX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
