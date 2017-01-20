@@ -39,6 +39,7 @@ class MainViewController: UITableViewController {
         demos.append("Sort")
         demos.append("DropIt")
         demos.append("GPXDemo")
+        demos.append("MapDemo")
     }
     
     // MARK: - Table view data source

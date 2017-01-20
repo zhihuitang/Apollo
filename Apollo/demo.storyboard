@@ -776,6 +776,38 @@
             </objects>
             <point key="canvasLocation" x="-5814.4927536231889" y="-1129.0760869565217"/>
         </scene>
+        <!--Map Demo View Controller-->
+        <scene sceneID="4Qf-oW-IjB">
+            <objects>
+                <viewController storyboardIdentifier="MapDemo" id="r6f-hk-NvR" customClass="MapDemoViewController" customModule="Apollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dPE-SO-Re6"/>
+                        <viewControllerLayoutGuide type="bottom" id="bPl-XL-n1N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ces-Hd-7B8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnt-uz-CnW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mnt-uz-CnW" firstAttribute="top" secondItem="Ces-Hd-7B8" secondAttribute="top" id="HYu-Fx-d8s"/>
+                            <constraint firstItem="mnt-uz-CnW" firstAttribute="leading" secondItem="Ces-Hd-7B8" secondAttribute="leading" id="e7Y-RT-5vZ"/>
+                            <constraint firstAttribute="trailing" secondItem="mnt-uz-CnW" secondAttribute="trailing" id="emr-zQ-djC"/>
+                            <constraint firstItem="mnt-uz-CnW" firstAttribute="bottom" secondItem="bPl-XL-n1N" secondAttribute="top" id="wPF-Ai-qOf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="mnt-uz-CnW" id="HrJ-Yp-a8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYJ-6s-zaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5156.521739130435" y="-1126.6304347826087"/>
+        </scene>
         <!--Alamofire View Controller-->
         <scene sceneID="Smn-4g-qPm">
             <objects>
