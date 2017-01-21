@@ -54,3 +54,13 @@ extension UIBezierPath {
         return path
     }
 }
+
+extension UIViewController {
+    var contentViewController: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? navcon
+        } else {
+            return self
+        }
+    }
+}

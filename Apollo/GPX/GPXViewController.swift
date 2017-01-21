@@ -19,7 +19,7 @@ class GPXViewController: BaseViewController, MKMapViewDelegate {
     }
     
     override var name: String {
-        return "GPX demo"
+        return "Trax demo"
     }
     
     var gpxURL: NSURL? {
@@ -58,10 +58,18 @@ class GPXViewController: BaseViewController, MKMapViewDelegate {
         } else {
             view.annotation = annotation
         }
+        
+        view.isDraggable = annotation is EditableWaypoint
+        
         view.leftCalloutAccessoryView = nil
+        view.rightCalloutAccessoryView = nil
         if let waypoint = annotation as? GPX.Waypoint {
             if waypoint.thumbnailURL != nil {
                 view.leftCalloutAccessoryView = UIButton(frame: Constants.LeftCalloutFrame)
+            }
+            
+            if waypoint is EditableWaypoint {
+                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             }
         }
         return view
@@ -76,6 +84,57 @@ class GPXViewController: BaseViewController, MKMapViewDelegate {
         
         }
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.leftCalloutAccessoryView {
+            performSegue(withIdentifier: Constants.ShowImageSegue, sender: view)
+        } else if control == view.rightCalloutAccessoryView {
+            mapView.deselectAnnotation(view.annotation, animated: true)
+            performSegue(withIdentifier: Constants.EditUserWayPoint, sender: view)
+        }
+    }
+    
+    // MARK: NAVIGATION
+    
+    // unwind segue
+    @IBAction func updatedUserWaypoint(segue: UIStoryboardSegue) {
+        if let vc = segue.source.contentViewController as? EditWaypointViewController {
+            selectWaypoint(waypoint: vc.waypointToEdit)
+        }
+    }
+    
+    
+    private func selectWaypoint(waypoint: GPX.Waypoint?) {
+        if waypoint != nil {
+            mapView.selectAnnotation(waypoint!, animated: true)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination.contentViewController
+        if let annotationView = sender as? MKAnnotationView,
+            let waypoint = annotationView.annotation as? GPX.Waypoint {
+            if segue.identifier == Constants.ShowImageSegue {
+                if let ivc = destination as? ImageViewController {
+                    ivc.imageURL = waypoint.imageURL
+                    ivc.title = waypoint.name
+                }
+            } else if segue.identifier == Constants.EditUserWayPoint {
+                if let evc = destination as? EditWaypointViewController, let editableWaypoint = waypoint as? EditableWaypoint {
+                    evc.waypointToEdit = editableWaypoint
+                }
+            }
+        }
+    }
+    @IBAction func addWaypoint(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            let coordinate = mapView.convert(sender.location(in: mapView), toCoordinateFrom: mapView)
+            let waypoint = EditableWaypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            waypoint.name = "Dropped"
+            mapView.addAnnotation(waypoint)
+            
+        }
+    }
+
     private struct Constants {
         static let LeftCalloutFrame = CGRect(x: 0, y: 0, width: 59, height: 59)
         static let AnnotationViewReuseIdentifier = "wayout"
