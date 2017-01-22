@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class GPXViewController: BaseViewController, MKMapViewDelegate {
+class GPXViewController: BaseViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -119,12 +119,41 @@ class GPXViewController: BaseViewController, MKMapViewDelegate {
                     ivc.title = waypoint.name
                 }
             } else if segue.identifier == Constants.EditUserWayPoint {
-                if let evc = destination as? EditWaypointViewController, let editableWaypoint = waypoint as? EditableWaypoint {
-                    evc.waypointToEdit = editableWaypoint
+                if let ewvc = destination as? EditWaypointViewController, let editableWaypoint = waypoint as? EditableWaypoint {
+                    if let ppc = ewvc.popoverPresentationController {
+                        ppc.delegate = self
+                        ppc.sourceRect = annotationView.frame
+                    }
+                    ewvc.waypointToEdit = editableWaypoint
                 }
             }
         }
     }
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        if let ewpc = popoverPresentationController.presentedViewController as? EditWaypointViewController {
+            selectWaypoint(waypoint: ewpc.waypointToEdit)
+        }
+    }
+    
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return traitCollection.horizontalSizeClass == .compact ? .overFullScreen : .none
+    }
+    
+    
+    func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        if style == .fullScreen || style == .overFullScreen {
+            let navcon = UINavigationController(rootViewController: controller.presentedViewController)
+            let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+            visualEffectView.frame = navcon.view.bounds
+            visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            navcon.view.insertSubview(visualEffectView, at: 0)
+            return navcon
+        } else {
+            return nil
+        }
+    }
+    
     @IBAction func addWaypoint(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             let coordinate = mapView.convert(sender.location(in: mapView), toCoordinateFrom: mapView)
@@ -134,6 +163,7 @@ class GPXViewController: BaseViewController, MKMapViewDelegate {
             
         }
     }
+    
 
     private struct Constants {
         static let LeftCalloutFrame = CGRect(x: 0, y: 0, width: 59, height: 59)

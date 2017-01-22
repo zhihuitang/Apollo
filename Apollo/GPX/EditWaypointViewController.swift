@@ -92,4 +92,9 @@ class EditWaypointViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        preferredContentSize = view.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+    }
 }
