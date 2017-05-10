@@ -1,12 +1,35 @@
 PODS:
+  - AsyncSwift (2.0.0)
+  - PromiseKit (4.2.0):
+    - PromiseKit/Foundation (= 4.2.0)
+    - PromiseKit/QuartzCore (= 4.2.0)
+    - PromiseKit/UIKit (= 4.2.0)
+  - PromiseKit/CorePromise (4.2.0)
+  - PromiseKit/Foundation (4.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.0):
+    - PromiseKit/CorePromise
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.1)
   - SnapKit (3.0.2)
 
 DEPENDENCIES:
+  - AsyncSwift
+  - PromiseKit (~> 4.0)
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
   - SnapKit (~> 3.0.2)
 
 SPEC CHECKSUMS:
+  AsyncSwift: 6ba6ed9ecb51344458063f7c86fe447ab824e313
+  PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 32fd3f9a8ff42c1c769835ce7b6d89f19d893d81
+PODFILE CHECKSUM: 58a4208bd99c1ffa7a028fedb4a4b34e55ea1d36
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

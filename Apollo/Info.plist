@@ -48,5 +48,7 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>I need your location!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>May I see you photos?</string>
 </dict>
 </plist>

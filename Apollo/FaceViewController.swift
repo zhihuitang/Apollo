@@ -135,7 +135,7 @@ class FaceViewController: BaseViewController {
     }
     
     private struct Animation {
-        static let ShakeAngle = CGFloat(M_PI/6)
+        static let ShakeAngle = CGFloat(Double.pi/6)
         static let ShakeDuation = 0.5
     }
     

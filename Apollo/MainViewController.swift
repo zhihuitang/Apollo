@@ -41,6 +41,7 @@ class MainViewController: UITableViewController {
         demos.append("GPXDemo")
         demos.append("MapDemo")
         demos.append("My Profile")
+        demos.append("RxSwift Demo")
 
     }
     

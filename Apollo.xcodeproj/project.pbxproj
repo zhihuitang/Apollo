@@ -44,6 +44,7 @@
 		02B1A86E1E35FFB5008CB207 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1A86D1E35FFB5008CB207 /* MyProfileViewController.swift */; };
 		02B1A8701E360109008CB207 /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1A86F1E360109008CB207 /* MyProfileHeaderView.swift */; };
 		02B1A8721E360304008CB207 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1A8711E360304008CB207 /* Utilities.swift */; };
+		02E934B11E922988000C5AB6 /* RxDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E934B01E922988000C5AB6 /* RxDemoViewController.swift */; };
 		02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F010E71E03E13C00D730D8 /* AppDelegate.swift */; };
 		02F010ED1E03E13C00D730D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F010EB1E03E13C00D730D8 /* Main.storyboard */; };
 		02F010EF1E03E13C00D730D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F010EE1E03E13C00D730D8 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		02B1A86D1E35FFB5008CB207 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfileViewController.swift; path = MyProfile/MyProfileViewController.swift; sourceTree = "<group>"; };
 		02B1A86F1E360109008CB207 /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfileHeaderView.swift; path = MyProfile/MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		02B1A8711E360304008CB207 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		02E934B01E922988000C5AB6 /* RxDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDemoViewController.swift; sourceTree = "<group>"; };
 		02F010E41E03E13C00D730D8 /* Apollo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F010E71E03E13C00D730D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F010EC1E03E13C00D730D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				02B1A81B1E336A88008CB207 /* EditWaypointViewController.swift */,
 				02B1A8191E3358E2008CB207 /* ImageViewController.swift */,
 				025668FE1E32A101003966E2 /* MapDemoViewController.swift */,
+				02E934B01E922988000C5AB6 /* RxDemoViewController.swift */,
 			);
 			name = DemoViewController;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */,
 				02B1A8721E360304008CB207 /* Utilities.swift in Sources */,
 				026C9DAF1E2C1B0500DDDD53 /* NamedBezierPathsView.swift in Sources */,
+				02E934B11E922988000C5AB6 /* RxDemoViewController.swift in Sources */,
 				022D10961E0BD229001BDFBB /* EyeView.swift in Sources */,
 				021BCEF51E22EF8300A4F0A6 /* Sort.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,

@@ -8,7 +8,12 @@ target 'Apollo' do
   # Pods for Apollo
 
   pod 'SnapKit', '~> 3.0.2'
-
+  pod 'RxSwift', '~> 3.0'
+  pod 'RxCocoa', '~> 3.0'
+  pod 'AsyncSwift'
+  pod 'PromiseKit', '~> 4.0'
+  
+  
   target 'ApolloTests' do
     inherit! :search_paths
     # Pods for testing
