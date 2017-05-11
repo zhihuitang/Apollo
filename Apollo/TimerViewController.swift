@@ -14,10 +14,14 @@ class TimerViewController: BaseViewController {
     @IBOutlet weak var buttonPause: UIButton!
     @IBOutlet weak var buttonReset: UIButton!
     let timeInterval = 0.1
-    let TOKEN_REFRESH_PERIOD:Double = 30
+    let TOKEN_REFRESH_PERIOD:Double = 10
     let key = "timer_count"
 
-    var scheduledTimer: Timer?
+    var scheduledTimer: Timer? {
+        willSet {
+            scheduledTimer?.invalidate()
+        }
+    }
     
     @IBOutlet weak var timeLabel: UILabel!
     weak var weakSelf: TimerViewController? {
@@ -91,6 +95,11 @@ class TimerViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        scheduledTimer?.invalidate()
+        scheduledTimer = nil
+    }
     @IBOutlet weak var labelTimer: UILabel!
     @IBOutlet weak var btnScheduledTimer: UIButton!
     
@@ -100,7 +109,6 @@ class TimerViewController: BaseViewController {
         userDefault.set(0, forKey: key)
 
         btnScheduledTimer.setTitle(Date().description, for: .normal)
-        scheduledTimer?.invalidate()
         scheduledTimer = Timer.scheduledTimer(timeInterval: TOKEN_REFRESH_PERIOD,
                                      target: self,
                                      selector: #selector(self.refreshToken),
