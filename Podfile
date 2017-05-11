@@ -12,6 +12,7 @@ target 'Apollo' do
   pod 'RxCocoa', '~> 3.0'
   pod 'AsyncSwift'
   pod 'PromiseKit', '~> 4.0'
+  pod 'PromiseKit/Photos'
   
   
   target 'ApolloTests' do

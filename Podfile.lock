@@ -7,6 +7,8 @@ PODS:
   - PromiseKit/CorePromise (4.2.0)
   - PromiseKit/Foundation (4.2.0):
     - PromiseKit/CorePromise
+  - PromiseKit/Photos (4.2.0):
+    - PromiseKit/CorePromise
   - PromiseKit/QuartzCore (4.2.0):
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.2.0):
@@ -19,6 +21,7 @@ PODS:
 DEPENDENCIES:
   - AsyncSwift
   - PromiseKit (~> 4.0)
+  - PromiseKit/Photos
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
   - SnapKit (~> 3.0.2)
@@ -30,6 +33,6 @@ SPEC CHECKSUMS:
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 58a4208bd99c1ffa7a028fedb4a4b34e55ea1d36
+PODFILE CHECKSUM: bbf2bd1051f33ab7607ec7a7b6b2165d933f146f
 
 COCOAPODS: 1.2.0

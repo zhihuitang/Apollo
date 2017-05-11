@@ -12,6 +12,7 @@ import RxCocoa
 import UIKit
 import PhotosUI
 import Async
+import PromiseKit
 
 class RxDemoViewController: BaseViewController {
     
@@ -90,7 +91,7 @@ class RxDemoViewController: BaseViewController {
                 
                 PHImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .default, options: options) { (image, info) in
                     if let name = asset.originalFilename {
-                        print("photo \(name) \(index) \(image?.size) ")
+                        print("photo \(name) \(index) \(String(describing: image?.size)) ")
                     }
                 }
  
@@ -172,7 +173,7 @@ class RxDemoViewController: BaseViewController {
         
         let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
         
-        guard let asset = fetchResult.firstObject else {
+        guard fetchResult.firstObject != nil else {
             return
         }
         let options = PHImageRequestOptions()
@@ -192,6 +193,35 @@ class RxDemoViewController: BaseViewController {
                 
             }
         })
+    }
+    
+    @IBAction func btnPromiseClicked(_ sender: Any) {
+        PHPhotoLibrary.requestAuthorization().then { authorized in
+            print("authorized: \(authorized.rawValue)")  // => true or false
+        }.always {
+            print("promise finished")
+        }
+
+        /*
+        firstly {
+            UIApplication.shared.networkActivityIndicatorVisible = true
+        }.then {
+            return CLLocationManager.promise()
+        }.then { location in
+            let alert = UIAlertView()
+            alert.addButton(title: "Proceed!")
+            alert.addButton(title: "Proceed, but fastest!")
+            alert.cancelButtonIndex = alert.addButton("Cancel")
+            return alert.promise()
+        }.then { dismissedButtonIndex in
+            //… cancel wasn't pressed
+        }.always {
+            // *still* runs if the promise was cancelled
+            UIApplication.shared.networkActivityIndicatorVisible = false
+        }.catch { error in
+            //… cancel wasn't pressed
+        }
+        */
     }
 }
 

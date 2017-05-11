@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -150,10 +150,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Je-Gm-Mzi">
-                                <rect key="frame" x="20" y="86.000000000000014" width="374" height="98.333333333333357"/>
+                                <rect key="frame" x="20" y="85.999999999999986" width="374" height="98.666666666666643"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClO-jt-fUN">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="98.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="98.666666666666657"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="sin"/>
@@ -162,7 +162,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it3-pB-Jw6">
-                                        <rect key="frame" x="96" y="0.0" width="86" height="98.333333333333343"/>
+                                        <rect key="frame" x="96" y="0.0" width="86" height="98.666666666666657"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="cos"/>
@@ -171,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-GJ-MyO">
-                                        <rect key="frame" x="192" y="0.0" width="86" height="98.333333333333343"/>
+                                        <rect key="frame" x="192" y="0.0" width="86" height="98.666666666666657"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="tan"/>
@@ -180,7 +180,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQq-oI-QGh">
-                                        <rect key="frame" x="288" y="0.0" width="86" height="98.333333333333343"/>
+                                        <rect key="frame" x="288" y="0.0" width="86" height="98.666666666666657"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="AC"/>
@@ -255,7 +255,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xfm-0d-kg3">
-                                <rect key="frame" x="20" y="194.33333333333331" width="374" height="533.66666666666674"/>
+                                <rect key="frame" x="20" y="194.66666666666669" width="374" height="533.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qYq-Af-ulh">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="98.666666666666657"/>
@@ -299,10 +299,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yzm-Dp-uqk">
-                                        <rect key="frame" x="0.0" y="108.66666666666666" width="374" height="99"/>
+                                        <rect key="frame" x="0.0" y="108.66666666666666" width="374" height="98.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPe-Qe-fdV">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="99"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="98.666666666666686"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="π"/>
@@ -311,7 +311,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHR-iZ-5AR">
-                                                <rect key="frame" x="96" y="0.0" width="86" height="99"/>
+                                                <rect key="frame" x="96" y="0.0" width="86" height="98.666666666666686"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="7"/>
@@ -320,7 +320,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-4Y-90k">
-                                                <rect key="frame" x="192" y="0.0" width="86" height="99"/>
+                                                <rect key="frame" x="192" y="0.0" width="86" height="98.666666666666686"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="8"/>
@@ -329,7 +329,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT7-OO-Dr0">
-                                                <rect key="frame" x="288" y="0.0" width="86" height="99"/>
+                                                <rect key="frame" x="288" y="0.0" width="86" height="98.666666666666686"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="9"/>
@@ -340,7 +340,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kYX-MI-Ln6">
-                                        <rect key="frame" x="0.0" y="217.66666666666666" width="374" height="98.666666666666714"/>
+                                        <rect key="frame" x="0.0" y="217.33333333333334" width="374" height="98.666666666666657"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arT-xe-Qg6">
                                                 <rect key="frame" x="0.0" y="0.0" width="86" height="98.666666666666686"/>
@@ -381,7 +381,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="89O-0j-WBq">
-                                        <rect key="frame" x="0.0" y="326.33333333333326" width="374" height="98.666666666666742"/>
+                                        <rect key="frame" x="0.0" y="326" width="374" height="98.666666666666742"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqy-oy-o8Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="86" height="98.666666666666742"/>
@@ -422,7 +422,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ec5-OE-Ofk">
-                                        <rect key="frame" x="0.0" y="435" width="374" height="98.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="434.66666666666674" width="374" height="98.666666666666629"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08z-84-3TQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="86" height="98.666666666666629"/>
@@ -552,50 +552,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-KE-xOH">
-                                <rect key="frame" x="186" y="181" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuh-TA-Zjn">
-                                <rect key="frame" x="190" y="235" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="timerStart:" destination="L0h-HM-dnn" eventType="touchUpInside" id="2zm-p8-s7L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPX-eR-RUj">
-                                <rect key="frame" x="188" y="273" width="42" height="30"/>
-                                <state key="normal" title="Pause"/>
-                                <connections>
-                                    <action selector="timePause:" destination="L0h-HM-dnn" eventType="touchUpInside" id="FbE-d5-6tc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-C8-iYU">
-                                <rect key="frame" x="188" y="332" width="39" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="timeReset:" destination="L0h-HM-dnn" eventType="touchUpInside" id="abt-Aj-6pW"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m0E-4q-atE">
+                                <rect key="frame" x="20" y="28" width="374" height="700"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-KE-xOH">
+                                        <rect key="frame" x="164" y="0.0" width="46" height="116.66666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuh-TA-Zjn">
+                                        <rect key="frame" x="170" y="116.66666666666667" width="34" height="116.66666666666664"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="timerStart:" destination="L0h-HM-dnn" eventType="touchUpInside" id="2zm-p8-s7L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPX-eR-RUj">
+                                        <rect key="frame" x="166" y="233.33333333333329" width="42" height="116.66666666666671"/>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="timePause:" destination="L0h-HM-dnn" eventType="touchUpInside" id="FbE-d5-6tc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-C8-iYU">
+                                        <rect key="frame" x="167.66666666666666" y="350" width="39" height="116.66666666666669"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="timeReset:" destination="L0h-HM-dnn" eventType="touchUpInside" id="abt-Aj-6pW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-kC-6hC">
+                                        <rect key="frame" x="93.666666666666686" y="466.66666666666663" width="187" height="116.66666666666663"/>
+                                        <state key="normal" title="Timer.scheduledTimer Test"/>
+                                        <connections>
+                                            <action selector="btnScheduledTimerClicked:" destination="L0h-HM-dnn" eventType="touchUpInside" id="B9Q-8L-chm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGH-AO-T4S">
+                                        <rect key="frame" x="166.33333333333337" y="583.33333333333348" width="41.666666666666657" height="116.66666666666663"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DPX-eR-RUj" firstAttribute="top" secondItem="Kuh-TA-Zjn" secondAttribute="bottom" constant="8" symbolic="YES" id="6Hx-c2-zuU"/>
-                            <constraint firstItem="AaF-C8-iYU" firstAttribute="top" secondItem="DPX-eR-RUj" secondAttribute="bottom" constant="29" id="6gu-AK-4Hp"/>
-                            <constraint firstItem="Kuh-TA-Zjn" firstAttribute="top" secondItem="0GU-KE-xOH" secondAttribute="bottom" constant="33" id="OSu-g3-PIP"/>
-                            <constraint firstItem="Kuh-TA-Zjn" firstAttribute="centerX" secondItem="AaF-C8-iYU" secondAttribute="centerX" id="ahU-Aq-RxY"/>
-                            <constraint firstItem="0GU-KE-xOH" firstAttribute="top" secondItem="k9b-UN-o3i" secondAttribute="bottom" constant="161" id="hPx-JW-aso"/>
-                            <constraint firstItem="0GU-KE-xOH" firstAttribute="centerX" secondItem="DPX-eR-RUj" secondAttribute="centerX" id="oWX-mT-4RK"/>
-                            <constraint firstItem="DPX-eR-RUj" firstAttribute="leading" secondItem="AaF-C8-iYU" secondAttribute="leading" id="t4l-B1-LUF"/>
-                            <constraint firstItem="Kuh-TA-Zjn" firstAttribute="centerX" secondItem="xjG-f5-BNm" secondAttribute="centerX" id="vMh-Fy-jTh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m0E-4q-atE" secondAttribute="trailing" id="6mu-Fk-bhg"/>
+                            <constraint firstItem="m0E-4q-atE" firstAttribute="top" secondItem="k9b-UN-o3i" secondAttribute="bottom" constant="8" symbolic="YES" id="RZS-fe-GDS"/>
+                            <constraint firstItem="m0E-4q-atE" firstAttribute="leading" secondItem="xjG-f5-BNm" secondAttribute="leadingMargin" id="hl9-iK-tAj"/>
+                            <constraint firstItem="xEG-0C-MPA" firstAttribute="top" secondItem="m0E-4q-atE" secondAttribute="bottom" constant="8" symbolic="YES" id="xEd-EM-vhk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnScheduledTimer" destination="WhK-kC-6hC" id="VAe-ze-8fL"/>
                         <outlet property="buttonPause" destination="DPX-eR-RUj" id="An2-YR-qrQ"/>
                         <outlet property="buttonReset" destination="AaF-C8-iYU" id="1RC-Ct-WfJ"/>
                         <outlet property="buttonStart" destination="Kuh-TA-Zjn" id="8N4-Du-eGN"/>
+                        <outlet property="labelTimer" destination="aGH-AO-T4S" id="Ia9-Ze-jfn"/>
                         <outlet property="timeLabel" destination="0GU-KE-xOH" id="L8K-OU-Nem"/>
                     </connections>
                 </viewController>
@@ -616,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-4q-WN6">
-                                <rect key="frame" x="128" y="353" width="159" height="30"/>
+                                <rect key="frame" x="127.66666666666669" y="353" width="159" height="30"/>
                                 <state key="normal" title="Send Local Notification"/>
                                 <connections>
                                     <action selector="sendLocalNotification:" destination="fPc-D4-AOc" eventType="touchUpInside" id="ruR-Yh-CIs"/>
@@ -978,7 +994,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g63-id-yRc">
-                                <rect key="frame" x="20" y="313" width="374" height="110"/>
+                                <rect key="frame" x="20" y="293" width="374" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-hd-eQQ">
                                         <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -999,6 +1015,13 @@
                                         <state key="normal" title="Scan Pictures"/>
                                         <connections>
                                             <action selector="scan:" destination="v2K-TJ-EGk" eventType="touchUpInside" id="fTM-Qe-Y5C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-SR-tIa">
+                                        <rect key="frame" x="159" y="120" width="56" height="30"/>
+                                        <state key="normal" title="Promise"/>
+                                        <connections>
+                                            <action selector="btnPromiseClicked:" destination="v2K-TJ-EGk" eventType="touchUpInside" id="wcP-Pu-gZJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
