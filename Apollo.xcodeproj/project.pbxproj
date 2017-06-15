@@ -27,6 +27,7 @@
 		025668FD1E329FDA003966E2 /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 025668FC1E329FDA003966E2 /* Places.plist */; };
 		025668FF1E32A101003966E2 /* MapDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668FE1E32A101003966E2 /* MapDemoViewController.swift */; };
 		02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */; };
+		02641D4F1EF2667F0037741D /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02641D4E1EF2667F0037741D /* AudioViewController.swift */; };
 		026BD16E1E21A4EE00C0E3F3 /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 026BD16D1E21A4EE00C0E3F3 /* applelogo.png */; };
 		026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1701E21A5F600C0E3F3 /* SortViewController.swift */; };
 		026BD1731E21A7E600C0E3F3 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1721E21A7E600C0E3F3 /* BarView.swift */; };
@@ -96,6 +97,7 @@
 		025668FC1E329FDA003966E2 /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Places.plist; sourceTree = "<group>"; };
 		025668FE1E32A101003966E2 /* MapDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapDemoViewController.swift; path = MapDemo/MapDemoViewController.swift; sourceTree = "<group>"; };
 		02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		02641D4E1EF2667F0037741D /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		026BD16D1E21A4EE00C0E3F3 /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		026BD1701E21A5F600C0E3F3 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		026BD1721E21A7E600C0E3F3 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				02B1A8191E3358E2008CB207 /* ImageViewController.swift */,
 				025668FE1E32A101003966E2 /* MapDemoViewController.swift */,
 				02E934B01E922988000C5AB6 /* RxDemoViewController.swift */,
+				02641D4E1EF2667F0037741D /* AudioViewController.swift */,
 			);
 			name = DemoViewController;
 			sourceTree = "<group>";
@@ -423,7 +426,7 @@
 				TargetAttributes = {
 					02F010E31E03E13C00D730D8 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = RYYCVPYKXT;
+						DevelopmentTeam = UHQQY8UDK4;
 						ProvisioningStyle = Automatic;
 					};
 					02F010F71E03E13C00D730D8 = {
@@ -671,6 +674,7 @@
 				026BD1751E21A91B00C0E3F3 /* HistogramView.swift in Sources */,
 				02B1A81A1E3358E2008CB207 /* ImageViewController.swift in Sources */,
 				025668F21E3242FB003966E2 /* MKGPX.swift in Sources */,
+				02641D4F1EF2667F0037741D /* AudioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,7 +827,7 @@
 			baseConfigurationReference = 15E92AA34E6449269BAB21CA /* Pods-Apollo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				DEVELOPMENT_TEAM = UHQQY8UDK4;
 				INFOPLIST_FILE = Apollo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -838,7 +842,7 @@
 			baseConfigurationReference = 46AAB5335A3AFEDD5ADFDAFB /* Pods-Apollo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				DEVELOPMENT_TEAM = UHQQY8UDK4;
 				INFOPLIST_FILE = Apollo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

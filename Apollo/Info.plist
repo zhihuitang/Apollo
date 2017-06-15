@@ -50,5 +50,7 @@
 	<string>I need your location!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>May I see you photos?</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Give me access, now!</string>
 </dict>
 </plist>
