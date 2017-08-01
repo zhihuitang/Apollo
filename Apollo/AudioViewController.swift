@@ -41,12 +41,12 @@ class AudioViewController: BaseViewController {
         }
     }
     private func initAudio() {
-        //make an AudioSession, set it to PlayAndRecord and make it active
-        guard levelTimer.isValid == false else {
+        guard recorder == nil || recorder?.isRecording == false else {
             print("already started")
             return
         }
         
+        //make an AudioSession, set it to PlayAndRecord and make it active
         let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)

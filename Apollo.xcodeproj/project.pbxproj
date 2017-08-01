@@ -53,6 +53,7 @@
 		02F010FD1E03E13C00D730D8 /* ApolloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F010FC1E03E13C00D730D8 /* ApolloTests.swift */; };
 		02F011081E03E13C00D730D8 /* ApolloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F011071E03E13C00D730D8 /* ApolloUITests.swift */; };
 		02F011161E03E1F400D730D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F011151E03E1F400D730D8 /* MainViewController.swift */; };
+		02F465751F311844004AE9CD /* RotationLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F465741F311844004AE9CD /* RotationLabelViewController.swift */; };
 		02F8614A1E21547900F18FBC /* LocalNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F861491E21547900F18FBC /* LocalNotificationViewController.swift */; };
 		3F376D00D5684DB3C204C97F /* Pods_ApolloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8922EBD215978820030376F7 /* Pods_ApolloTests.framework */; };
 		880B0EB68CA28094C131FA1F /* Pods_Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2190F93271D9E283ED0DF9 /* Pods_Apollo.framework */; };
@@ -129,6 +130,7 @@
 		02F011071E03E13C00D730D8 /* ApolloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloUITests.swift; sourceTree = "<group>"; };
 		02F011091E03E13C00D730D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F011151E03E1F400D730D8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		02F465741F311844004AE9CD /* RotationLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationLabelViewController.swift; path = RotationLabel/RotationLabelViewController.swift; sourceTree = "<group>"; };
 		02F861491E21547900F18FBC /* LocalNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationViewController.swift; sourceTree = "<group>"; };
 		15E92AA34E6449269BAB21CA /* Pods-Apollo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apollo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apollo/Pods-Apollo.debug.xcconfig"; sourceTree = "<group>"; };
 		46AAB5335A3AFEDD5ADFDAFB /* Pods-Apollo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apollo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Apollo/Pods-Apollo.release.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
+				02F465761F3118C5004AE9CD /* RotationLabel */,
 				026C9DA91E2C0D4300DDDD53 /* Extension */,
 				026BD16F1E21A59B00C0E3F3 /* Resources */,
 				0204F7221E068F8800ECCB85 /* Tools */,
@@ -324,6 +327,14 @@
 				02F011091E03E13C00D730D8 /* Info.plist */,
 			);
 			path = ApolloUITests;
+			sourceTree = "<group>";
+		};
+		02F465761F3118C5004AE9CD /* RotationLabel */ = {
+			isa = PBXGroup;
+			children = (
+				02F465741F311844004AE9CD /* RotationLabelViewController.swift */,
+			);
+			name = RotationLabel;
 			sourceTree = "<group>";
 		};
 		1DAF03256613C6BA59179976 /* Pods */ = {
@@ -669,6 +680,7 @@
 				02F8614A1E21547900F18FBC /* LocalNotificationViewController.swift in Sources */,
 				023C153F1E03FAB500E5B4C1 /* SessionManager.swift in Sources */,
 				02B1A86E1E35FFB5008CB207 /* MyProfileViewController.swift in Sources */,
+				02F465751F311844004AE9CD /* RotationLabelViewController.swift in Sources */,
 				02B1A8701E360109008CB207 /* MyProfileHeaderView.swift in Sources */,
 				023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */,
 				026BD1751E21A91B00C0E3F3 /* HistogramView.swift in Sources */,

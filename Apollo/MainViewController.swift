@@ -43,6 +43,7 @@ class MainViewController: UITableViewController {
         demos.append("My Profile")
         demos.append("RxSwift Demo")
         demos.append("Microphone Demo")
+        demos.append("RotationLabel View")
 
     }
     
