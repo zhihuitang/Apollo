@@ -13,17 +13,18 @@ import UIKit
 @IBDesignable
 class RotationLabel: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var texts: [String] = ["Stockholm", "Sweden"]
-    
-    @IBInspectable
-    var title:String = "test"
-    
-    @IBInspectable
-    var bgColor: UIColor = .blue {
-        didSet {
-            setNeedsDisplay()
+    var totalItems: Int {
+        get {
+            return texts.count
         }
     }
+    
+    var texts: [String] = ["Stockholm", "Sweden", "Shanghai", "BeiJing", "London", "Shenzhen"]
+
+    @IBInspectable
+    var bgColor: UIColor = .white { didSet {
+        self.collectionView.backgroundColor = bgColor
+        setNeedsDisplay() } }
     
     @IBInspectable
     var scrollDirection: UICollectionViewScrollDirection = .vertical {
@@ -55,17 +56,39 @@ class RotationLabel: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return tmp
     }()
     
+    var timer: Timer?
+    
+    @IBInspectable
+    var cycleTime: Double = 2.0 {
+        didSet {
+            invalidateTimer()
+            setupTimer()
+        }
+    }
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializationUI()
+        startTimer()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initializationUI()
-        
+        startTimer()
     }
     
+    deinit {
+        self.collectionView.delegate = nil
+        self.collectionView.dataSource = nil
+    }
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        if newSuperview == nil {
+            invalidateTimer()
+        }
+    }
     private func initializationUI(){
         self.addSubview(self.collectionView)
         let views = ["collectionView": self.collectionView] as [String:Any]
@@ -73,6 +96,52 @@ class RotationLabel: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[collectionView]-0-|", options: [], metrics: nil, views: views))
         configCollectionView()
     }
+    
+    private func startTimer(){
+        invalidateTimer()
+        setupTimer()
+    }
+    
+    private func setupTimer(){
+        let automaticMethod = #selector(automaticScroll)
+        timer = Timer.scheduledTimer(timeInterval: cycleTime, target: self, selector: automaticMethod, userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .commonModes)
+    }
+    
+    func automaticScroll(){
+        let curIndex = getCurrentIndex()
+        let tarIndex = curIndex + 1 > totalItems - 1 ? 0 : curIndex + 1
+        print("targetIndex: \(tarIndex)")
+        scrolltoItem(index: tarIndex)
+        /*
+        if tarIndex >= totalItems {
+            tarIndex = (Int)(self.totalItems / 2)
+            scrolltoItem(index: tarIndex)
+        }*/
+    }
+    
+    private func scrolltoItem(index: Int, animated: Bool = true) {
+        let scrollPosition: UICollectionViewScrollPosition = scrollDirection == .horizontal ? .centeredHorizontally : .centeredVertically
+        self.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: scrollPosition, animated: animated)
+    }
+    
+    private func getCurrentIndex() -> Int {
+        var index = 0
+        if self.scrollDirection == .horizontal {
+            index = (Int)(self.collectionView.contentOffset.x / self.flowLayout.itemSize.width + 0.5)
+        } else {
+            index = (Int)(self.collectionView.contentOffset.y / self.flowLayout.itemSize.height + 0.5)
+        }
+        print("currentIndex: \(index)")
+        return max(index, 0)
+    }
+    
+    private func invalidateTimer()
+    {
+        self.timer?.invalidate()
+        self.timer = nil;
+    }
+
     
     private func configCollectionView(){
         self.collectionView.scrollsToTop = false
