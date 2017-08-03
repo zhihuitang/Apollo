@@ -20,6 +20,12 @@
 		023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15421E03FF8B00E5B4C1 /* FaceView.swift */; };
 		023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15451E041DFC00E5B4C1 /* FacialExpression.swift */; };
 		023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */; };
+		0241C3DD1F33C2A800754F3B /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0241C3DC1F33C2A800754F3B /* MyButton.xib */; };
+		0241C3DE1F33C2A800754F3B /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0241C3DC1F33C2A800754F3B /* MyButton.xib */; };
+		0241C3DF1F33C2A800754F3B /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0241C3DC1F33C2A800754F3B /* MyButton.xib */; };
+		0241C3E51F33C3BC00754F3B /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241C3E41F33C3BC00754F3B /* MyButtonView.swift */; };
+		0241C3E61F33C3BC00754F3B /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241C3E41F33C3BC00754F3B /* MyButtonView.swift */; };
+		0241C3E71F33C3BC00754F3B /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241C3E41F33C3BC00754F3B /* MyButtonView.swift */; };
 		025668EE1E32397F003966E2 /* GPXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668ED1E32397F003966E2 /* GPXViewController.swift */; };
 		025668F01E323D96003966E2 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668EF1E323D96003966E2 /* GPX.swift */; };
 		025668F21E3242FB003966E2 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668F11E3242FB003966E2 /* MKGPX.swift */; };
@@ -93,6 +99,8 @@
 		023C15421E03FF8B00E5B4C1 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 		023C15451E041DFC00E5B4C1 /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchViewController.swift; sourceTree = "<group>"; };
+		0241C3DC1F33C2A800754F3B /* MyButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyButton.xib; path = CustomView/MyButton.xib; sourceTree = "<group>"; };
+		0241C3E41F33C3BC00754F3B /* MyButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyButtonView.swift; path = CustomView/MyButtonView.swift; sourceTree = "<group>"; };
 		025668ED1E32397F003966E2 /* GPXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPXViewController.swift; path = GPX/GPXViewController.swift; sourceTree = "<group>"; };
 		025668EF1E323D96003966E2 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
 		025668F11E3242FB003966E2 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKGPX.swift; path = GPX/MKGPX.swift; sourceTree = "<group>"; };
@@ -221,6 +229,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		0241C3DB1F33C26C00754F3B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0241C3E41F33C3BC00754F3B /* MyButtonView.swift */,
+				0241C3DC1F33C2A800754F3B /* MyButton.xib */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
 		026BD16F1E21A59B00C0E3F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +353,7 @@
 		02F465761F3118C5004AE9CD /* RotationLabelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0241C3DB1F33C26C00754F3B /* CustomView */,
 				02F465771F311965004AE9CD /* RotationLabel */,
 				02F465741F311844004AE9CD /* RotationLabelViewController.swift */,
 			);
@@ -499,6 +517,7 @@
 				02F010ED1E03E13C00D730D8 /* Main.storyboard in Resources */,
 				025668FD1E329FDA003966E2 /* Places.plist in Resources */,
 				023C15301E03EBC100E5B4C1 /* demo.storyboard in Resources */,
+				0241C3DD1F33C2A800754F3B /* MyButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0241C3DE1F33C2A800754F3B /* MyButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +533,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0241C3DF1F33C2A800754F3B /* MyButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +708,7 @@
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
 				026C9DAB1E2C0D5400DDDD53 /* UIKit Extension.swift in Sources */,
 				025668F01E323D96003966E2 /* GPX.swift in Sources */,
+				0241C3E51F33C3BC00754F3B /* MyButtonView.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
 				025668FF1E32A101003966E2 /* MapDemoViewController.swift in Sources */,
 				023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */,
@@ -710,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0241C3E61F33C3BC00754F3B /* MyButtonView.swift in Sources */,
 				02F010FD1E03E13C00D730D8 /* ApolloTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0241C3E71F33C3BC00754F3B /* MyButtonView.swift in Sources */,
 				02F011081E03E13C00D730D8 /* ApolloUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

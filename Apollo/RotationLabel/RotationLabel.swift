@@ -111,7 +111,7 @@ class RotationLabel: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func automaticScroll(){
         let curIndex = getCurrentIndex()
         let tarIndex = curIndex + 1 > totalItems - 1 ? 0 : curIndex + 1
-        print("targetIndex: \(tarIndex)")
+        //print("targetIndex: \(tarIndex)")
         scrolltoItem(index: tarIndex)
         /*
         if tarIndex >= totalItems {
@@ -132,7 +132,7 @@ class RotationLabel: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         } else {
             index = (Int)(self.collectionView.contentOffset.y / self.flowLayout.itemSize.height + 0.5)
         }
-        print("currentIndex: \(index)")
+        //print("currentIndex: \(index)")
         return max(index, 0)
     }
     
