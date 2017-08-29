@@ -50,10 +50,15 @@ class BaseViewController: UIViewController {
 
 protocol DemoView {
     var name: String { get }
+    var classIdentity: String? { get }
 }
 
 
 extension BaseViewController: DemoView {
+    var classIdentity: String? {
+        return self.className
+    }
+
     internal var name: String {
         get {
             return "Base"

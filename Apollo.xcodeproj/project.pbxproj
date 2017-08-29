@@ -10,6 +10,8 @@
 		0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F71E1E04F1E800ECCB85 /* Extensions.swift */; };
 		0204F7211E058CE200ECCB85 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */; };
 		0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204F7231E068FB600ECCB85 /* DictManager.swift */; };
+		020566EE1F556B08000A46DA /* CollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020566ED1F556B08000A46DA /* CollectionPresenter.swift */; };
+		020566F21F556D9B000A46DA /* DataCollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020566F11F556D9B000A46DA /* DataCollectionTableViewController.swift */; };
 		021BCEF51E22EF8300A4F0A6 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BCEF31E22EF8300A4F0A6 /* Sort.swift */; };
 		021BCEF61E22EF8300A4F0A6 /* SortClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BCEF41E22EF8300A4F0A6 /* SortClass.swift */; };
 		022D10961E0BD229001BDFBB /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D10951E0BD229001BDFBB /* EyeView.swift */; };
@@ -89,6 +91,8 @@
 		0204F71E1E04F1E800ECCB85 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0204F7201E058CE200ECCB85 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		0204F7231E068FB600ECCB85 /* DictManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictManager.swift; sourceTree = "<group>"; };
+		020566ED1F556B08000A46DA /* CollectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPresenter.swift; sourceTree = "<group>"; };
+		020566F11F556D9B000A46DA /* DataCollectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCollectionTableViewController.swift; sourceTree = "<group>"; };
 		021BCEF31E22EF8300A4F0A6 /* Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		021BCEF41E22EF8300A4F0A6 /* SortClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortClass.swift; sourceTree = "<group>"; };
 		022D10951E0BD229001BDFBB /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
@@ -193,6 +197,23 @@
 				02B1A8711E360304008CB207 /* Utilities.swift */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		020566E51F556A1D000A46DA /* Data Collection */ = {
+			isa = PBXGroup;
+			children = (
+				020566E61F556A2A000A46DA /* New Group */,
+				020566ED1F556B08000A46DA /* CollectionPresenter.swift */,
+				020566F11F556D9B000A46DA /* DataCollectionTableViewController.swift */,
+			);
+			name = "Data Collection";
+			sourceTree = "<group>";
+		};
+		020566E61F556A2A000A46DA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		021BCEF71E22EF8800A4F0A6 /* Sort */ = {
@@ -318,6 +339,7 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
+				020566E51F556A1D000A46DA /* Data Collection */,
 				02F465761F3118C5004AE9CD /* RotationLabelDemo */,
 				026C9DA91E2C0D4300DDDD53 /* Extension */,
 				026BD16F1E21A59B00C0E3F3 /* Resources */,
@@ -471,6 +493,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = UHQQY8UDK4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					02F010F71E03E13C00D730D8 = {
 						CreatedOnToolsVersion = 8.1;
@@ -696,6 +723,7 @@
 				026C9DA81E2C0BE700DDDD53 /* DropItView.swift in Sources */,
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
 				021BCEF61E22EF8300A4F0A6 /* SortClass.swift in Sources */,
+				020566F21F556D9B000A46DA /* DataCollectionTableViewController.swift in Sources */,
 				025668FB1E329FD3003966E2 /* Places.swift in Sources */,
 				0204F7241E068FB600ECCB85 /* DictManager.swift in Sources */,
 				023C158A1E0445DA00E5B4C1 /* DispatchViewController.swift in Sources */,
@@ -722,6 +750,7 @@
 				02B1A8701E360109008CB207 /* MyProfileHeaderView.swift in Sources */,
 				023C15431E03FF8B00E5B4C1 /* FaceView.swift in Sources */,
 				026BD1751E21A91B00C0E3F3 /* HistogramView.swift in Sources */,
+				020566EE1F556B08000A46DA /* CollectionPresenter.swift in Sources */,
 				02B1A81A1E3358E2008CB207 /* ImageViewController.swift in Sources */,
 				025668F21E3242FB003966E2 /* MKGPX.swift in Sources */,
 				02641D4F1EF2667F0037741D /* AudioViewController.swift in Sources */,

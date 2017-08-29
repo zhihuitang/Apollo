@@ -29,6 +29,7 @@ class MainViewController: UITableViewController {
     }
 
     private func loadData() {
+        demos.append("Data Collection")
         demos.append("Alamofire")
         demos.append("CustomView")
         demos.append("Calculator")
@@ -59,18 +60,18 @@ class MainViewController: UITableViewController {
         return demos.count
     }
 
-    func getDemoViewController(identifier: String) -> BaseViewController {
+    func getDemoViewController(identifier: String) -> UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: Storyboard.demo, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: identifier ) as! BaseViewController
+        return storyboard.instantiateViewController(withIdentifier: identifier )
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let demoAlamo = getDemoViewController(identifier: demos[indexPath.row])
+        let demoAlamo = getDemoViewController(identifier: demos[indexPath.row]) as! DemoView
         cell.textLabel!.text = demoAlamo.name
-        cell.detailTextLabel!.text = demoAlamo.className
+        cell.detailTextLabel!.text = demoAlamo.classIdentity ?? "not defined"
 
         return cell
     }
