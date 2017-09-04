@@ -35,6 +35,14 @@ class CollectionPresenter: CollectionDelegate {
         data.append(DeviceInfo(key: "Battery State", value: String(UIDevice.current.batteryState.rawValue)))
         data.append(DeviceInfo(key: "Battery Level", value: "\(UIDevice.current.batteryLevel * 100)%"))
 
+        var udid = UIDevice.current.identifierForVendor!.uuidString
+        if let _udid = KeychainService.loadPassword() {
+            udid = _udid as String
+        } else {
+            KeychainService.savePassword(token: udid as NSString)
+        }
+        data.append(DeviceInfo(key: "udid", value: udid))
+
     }
     
     func getIDFA() -> (Bool,String) {
