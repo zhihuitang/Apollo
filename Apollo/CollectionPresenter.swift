@@ -61,8 +61,12 @@ class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegat
             data.append(DeviceInfo(key: "Wifi Address", value: wifiAddr))
         }
         
+        data.append(DeviceInfo(key: "Network Usage", value: "-----------------------------------"))
         let traffic = TrafficCounter()
-        print("usage: \(traffic.usage.description)")
+        //print("usage: \(traffic.usage.description)")
+        for (name, usage) in traffic.allUsage {
+            data.append(DeviceInfo(key: name, value: usage.description))
+        }
     
     }
     

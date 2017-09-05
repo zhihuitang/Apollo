@@ -30,7 +30,7 @@ public struct TrafficData {
 extension TrafficData: CustomStringConvertible {
     
     public var description: String {
-        return "received: \(received.double.unitString), sent: \(sent.double.unitString)"
+        return "Rx: \(received.double.unitString), Tx: \(sent.double.unitString)"
     }
 }
 
