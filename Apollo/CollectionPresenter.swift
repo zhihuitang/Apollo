@@ -9,6 +9,8 @@
 import AdSupport
 import Foundation
 import UIKit
+import ExternalAccessory
+import CoreBluetooth
 
 protocol CollectionDelegate {
     var data: [DeviceInfo] { get }
@@ -19,12 +21,16 @@ struct DeviceInfo {
     let value: String
 }
 
-class CollectionPresenter: CollectionDelegate {
+@available(iOS 10.0, *)
+class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegate {
     var data: [DeviceInfo] = []
+    var centralManager : CBManager?
 
-    init() {
+    required override init() {
+        super.init()
         UIDevice.current.isBatteryMonitoringEnabled = true
-        collect()
+        self.collect()
+        self.startUpCentralManager()
     }
     
     private func collect(){
@@ -43,11 +49,54 @@ class CollectionPresenter: CollectionDelegate {
         }
         data.append(DeviceInfo(key: "udid", value: udid))
 
+//        getBlueteethDevices()
+        
+        if let networkInfo = DeviceKit.getNetWorkInfo() {
+            for (name, info) in networkInfo {
+                data.append(DeviceInfo(key: name, value: info))
+            }
+            
+        }
+        if let wifiAddr = DeviceKit.getWifiAddr() {
+            data.append(DeviceInfo(key: "Wifi Address", value: wifiAddr))
+        }
     }
     
     func getIDFA() -> (Bool,String) {
         let manager = ASIdentifierManager.shared()!
 
         return (manager.isAdvertisingTrackingEnabled, manager.advertisingIdentifier.uuidString)
+    }
+
+    func getBlueteethDevices(){
+        let accessories = EAAccessoryManager.shared().connectedAccessories
+        if accessories.count < 1 {
+            print("no connected accessories")
+        } else {
+            for accessory in accessories {
+                print(accessory.name)
+            }
+        }
+    }
+    
+    func startUpCentralManager() {
+        print("Initializing central manager")
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+    }
+    
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        print("\(#line) \(#function)")
+        print("checking state")
+        
+        if central.state != .poweredOn {
+            // In a real app, you'd deal with all the states correctly
+            return
+        }
+        central.scanForPeripherals(withServices: nil,options:nil)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        
     }
 }

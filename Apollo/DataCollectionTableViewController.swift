@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 10.0, *)
 class DataCollectionTableViewController: UITableViewController {
 
     let presenter: CollectionDelegate = CollectionPresenter()
@@ -98,6 +99,7 @@ class DataCollectionTableViewController: UITableViewController {
 
 }
 
+@available(iOS 10.0, *)
 extension DataCollectionTableViewController: DemoView {
     var name: String { return "Collection of device" }
     var classIdentity: String? {
