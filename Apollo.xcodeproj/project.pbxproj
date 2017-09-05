@@ -28,6 +28,7 @@
 		0241C3E51F33C3BC00754F3B /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241C3E41F33C3BC00754F3B /* MyButtonView.swift */; };
 		0241C3E61F33C3BC00754F3B /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241C3E41F33C3BC00754F3B /* MyButtonView.swift */; };
 		0241C3E71F33C3BC00754F3B /* MyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241C3E41F33C3BC00754F3B /* MyButtonView.swift */; };
+		02435ED31F5D4E6C00F85FA0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02435ED21F5D4E6C00F85FA0 /* KeychainService.swift */; };
 		025668EE1E32397F003966E2 /* GPXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668ED1E32397F003966E2 /* GPXViewController.swift */; };
 		025668F01E323D96003966E2 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668EF1E323D96003966E2 /* GPX.swift */; };
 		025668F21E3242FB003966E2 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668F11E3242FB003966E2 /* MKGPX.swift */; };
@@ -36,6 +37,12 @@
 		025668FF1E32A101003966E2 /* MapDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025668FE1E32A101003966E2 /* MapDemoViewController.swift */; };
 		02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */; };
 		02641D4F1EF2667F0037741D /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02641D4E1EF2667F0037741D /* AudioViewController.swift */; };
+		026891801F5EEC29001F3A9F /* DeviceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268917F1F5EEC29001F3A9F /* DeviceKit.swift */; };
+		026891831F5EF594001F3A9F /* TrafficPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026891821F5EF594001F3A9F /* TrafficPackage.swift */; };
+		026891871F5EF5AC001F3A9F /* TrafficCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026891861F5EF5AC001F3A9F /* TrafficCounter.swift */; };
+		0268918A1F5EF639001F3A9F /* Ex+UInt32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026891881F5EF639001F3A9F /* Ex+UInt32.swift */; };
+		0268918B1F5EF639001F3A9F /* Ex+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026891891F5EF639001F3A9F /* Ex+Double.swift */; };
+		0268918D1F5F28BB001F3A9F /* TrafficData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268918C1F5F28BB001F3A9F /* TrafficData.swift */; };
 		026BD16E1E21A4EE00C0E3F3 /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 026BD16D1E21A4EE00C0E3F3 /* applelogo.png */; };
 		026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1701E21A5F600C0E3F3 /* SortViewController.swift */; };
 		026BD1731E21A7E600C0E3F3 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1721E21A7E600C0E3F3 /* BarView.swift */; };
@@ -105,6 +112,7 @@
 		023C15891E0445DA00E5B4C1 /* DispatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchViewController.swift; sourceTree = "<group>"; };
 		0241C3DC1F33C2A800754F3B /* MyButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyButton.xib; path = CustomView/MyButton.xib; sourceTree = "<group>"; };
 		0241C3E41F33C3BC00754F3B /* MyButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyButtonView.swift; path = CustomView/MyButtonView.swift; sourceTree = "<group>"; };
+		02435ED21F5D4E6C00F85FA0 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		025668ED1E32397F003966E2 /* GPXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPXViewController.swift; path = GPX/GPXViewController.swift; sourceTree = "<group>"; };
 		025668EF1E323D96003966E2 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
 		025668F11E3242FB003966E2 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKGPX.swift; path = GPX/MKGPX.swift; sourceTree = "<group>"; };
@@ -113,6 +121,13 @@
 		025668FE1E32A101003966E2 /* MapDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapDemoViewController.swift; path = MapDemo/MapDemoViewController.swift; sourceTree = "<group>"; };
 		02617AE71E1410DD00C3F4E9 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		02641D4E1EF2667F0037741D /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		0268917E1F5EDF98001F3A9F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		0268917F1F5EEC29001F3A9F /* DeviceKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceKit.swift; sourceTree = "<group>"; };
+		026891821F5EF594001F3A9F /* TrafficPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficPackage.swift; sourceTree = "<group>"; };
+		026891861F5EF5AC001F3A9F /* TrafficCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficCounter.swift; sourceTree = "<group>"; };
+		026891881F5EF639001F3A9F /* Ex+UInt32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+UInt32.swift"; sourceTree = "<group>"; };
+		026891891F5EF639001F3A9F /* Ex+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+Double.swift"; sourceTree = "<group>"; };
+		0268918C1F5F28BB001F3A9F /* TrafficData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficData.swift; sourceTree = "<group>"; };
 		026BD16D1E21A4EE00C0E3F3 /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		026BD1701E21A5F600C0E3F3 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		026BD1721E21A7E600C0E3F3 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -190,11 +205,16 @@
 		0204F7221E068F8800ECCB85 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				026891881F5EF639001F3A9F /* Ex+UInt32.swift */,
+				026891891F5EF639001F3A9F /* Ex+Double.swift */,
+				026891811F5EF586001F3A9F /* Traffic */,
 				0204F7231E068FB600ECCB85 /* DictManager.swift */,
 				025668FA1E329FD3003966E2 /* Places.swift */,
 				025668EF1E323D96003966E2 /* GPX.swift */,
 				025668F11E3242FB003966E2 /* MKGPX.swift */,
 				02B1A8711E360304008CB207 /* Utilities.swift */,
+				02435ED21F5D4E6C00F85FA0 /* KeychainService.swift */,
+				0268917F1F5EEC29001F3A9F /* DeviceKit.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -259,6 +279,16 @@
 			name = CustomView;
 			sourceTree = "<group>";
 		};
+		026891811F5EF586001F3A9F /* Traffic */ = {
+			isa = PBXGroup;
+			children = (
+				0268918C1F5F28BB001F3A9F /* TrafficData.swift */,
+				026891861F5EF5AC001F3A9F /* TrafficCounter.swift */,
+				026891821F5EF594001F3A9F /* TrafficPackage.swift */,
+			);
+			name = Traffic;
+			sourceTree = "<group>";
+		};
 		026BD16F1E21A59B00C0E3F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +340,7 @@
 				02F010F01E03E13C00D730D8 /* LaunchScreen.storyboard */,
 				02F010F31E03E13C00D730D8 /* Info.plist */,
 				0204F71E1E04F1E800ECCB85 /* Extensions.swift */,
+				0268917E1F5EDF98001F3A9F /* Bridging-Header.h */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
@@ -710,12 +741,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				025668EE1E32397F003966E2 /* GPXViewController.swift in Sources */,
+				0268918A1F5EF639001F3A9F /* Ex+UInt32.swift in Sources */,
+				026891801F5EEC29001F3A9F /* DeviceKit.swift in Sources */,
 				02F4657B1F3119BC004AE9CD /* RotationCell.swift in Sources */,
 				023C15411E03FECE00E5B4C1 /* FaceViewController.swift in Sources */,
 				02F011161E03E1F400D730D8 /* MainViewController.swift in Sources */,
 				026C9DAD1E2C13F400DDDD53 /* FallingObjectBehavior.swift in Sources */,
 				026BD1731E21A7E600C0E3F3 /* BarView.swift in Sources */,
 				026C9DA61E2C0AD700DDDD53 /* DropItViewController.swift in Sources */,
+				02435ED31F5D4E6C00F85FA0 /* KeychainService.swift in Sources */,
 				026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */,
 				02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */,
 				02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */,
@@ -730,11 +764,15 @@
 				02B1A8721E360304008CB207 /* Utilities.swift in Sources */,
 				026C9DAF1E2C1B0500DDDD53 /* NamedBezierPathsView.swift in Sources */,
 				02E934B11E922988000C5AB6 /* RxDemoViewController.swift in Sources */,
+				0268918B1F5EF639001F3A9F /* Ex+Double.swift in Sources */,
 				022D10961E0BD229001BDFBB /* EyeView.swift in Sources */,
 				021BCEF51E22EF8300A4F0A6 /* Sort.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
+				026891831F5EF594001F3A9F /* TrafficPackage.swift in Sources */,
+				0268918D1F5F28BB001F3A9F /* TrafficData.swift in Sources */,
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
 				026C9DAB1E2C0D5400DDDD53 /* UIKit Extension.swift in Sources */,
+				026891871F5EF5AC001F3A9F /* TrafficCounter.swift in Sources */,
 				025668F01E323D96003966E2 /* GPX.swift in Sources */,
 				0241C3E51F33C3BC00754F3B /* MyButtonView.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
@@ -914,6 +952,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.max.tang.Apollo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -929,6 +969,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.max.tang.Apollo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

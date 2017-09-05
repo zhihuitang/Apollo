@@ -34,7 +34,7 @@ class DeviceKit {
                 
                 // Check interface name:
                 let name = String(cString: interface.ifa_name)
-                print("network name: \(name)")
+                //print("network name: \(name)")
                 //if  name == "en0" {
                 
                 // Convert interface address to a human readable string:

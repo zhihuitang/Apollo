@@ -52,7 +52,7 @@ class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegat
 //        getBlueteethDevices()
         
         if let networkInfo = DeviceKit.getNetWorkInfo() {
-            for (name, info) in networkInfo {
+            for (name, info) in networkInfo {                
                 data.append(DeviceInfo(key: name, value: info))
             }
             
@@ -60,6 +60,10 @@ class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegat
         if let wifiAddr = DeviceKit.getWifiAddr() {
             data.append(DeviceInfo(key: "Wifi Address", value: wifiAddr))
         }
+        
+        let traffic = TrafficCounter()
+        print("usage: \(traffic.usage.description)")
+    
     }
     
     func getIDFA() -> (Bool,String) {
