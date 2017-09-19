@@ -29,6 +29,7 @@ class MainViewController: UITableViewController {
     }
 
     private func loadData() {
+        demos.append("Core Location Demo")
         demos.append("Data Collection")
         demos.append("Alamofire")
         demos.append("CustomView")

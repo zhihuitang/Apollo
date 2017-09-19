@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1085,7 +1085,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g63-id-yRc">
-                                <rect key="frame" x="20" y="293" width="374" height="150"/>
+                                <rect key="frame" x="20" y="273" width="374" height="190"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-hd-eQQ">
                                         <rect key="frame" x="20" y="0.0" width="334" height="30"/>
@@ -1113,6 +1113,13 @@
                                         <state key="normal" title="Promise"/>
                                         <connections>
                                             <action selector="btnPromiseClicked:" destination="v2K-TJ-EGk" eventType="touchUpInside" id="wcP-Pu-gZJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZJ-xI-7tc">
+                                        <rect key="frame" x="107.66666666666669" y="160" width="159" height="30"/>
+                                        <state key="normal" title="RxSwift Scheduler Test"/>
+                                        <connections>
+                                            <action selector="rxSchedulerTest:" destination="v2K-TJ-EGk" eventType="touchUpInside" id="2sn-ES-SKK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1172,6 +1179,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvi-ns-llK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3542" y="-1392"/>
+        </scene>
+        <!--Location Demo View Controller-->
+        <scene sceneID="Uo2-pJ-pka">
+            <objects>
+                <viewController storyboardIdentifier="Core Location Demo" id="gQX-4h-qFz" customClass="LocationDemoViewController" customModule="Apollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Vt-j4-A59"/>
+                        <viewControllerLayoutGuide type="bottom" id="AUR-iI-eBP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tut-o9-qto">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rz9-qF-BHb">
+                                <rect key="frame" x="28" y="120" width="358" height="168.33333333333331"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-Ou-Sbr">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="29"/>
+                                        <segments>
+                                            <segment title="Address"/>
+                                            <segment title="Reverse"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Olof Palmes Gata 16, Stockholm, Sweden" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpq-YF-rku">
+                                        <rect key="frame" x="0.0" y="48" width="358" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-Fi-6Uh">
+                                        <rect key="frame" x="0.0" y="98" width="358" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjM-9g-1uR">
+                                        <rect key="frame" x="0.0" y="138.33333333333331" width="358" height="30"/>
+                                        <state key="normal" title="Look up"/>
+                                        <connections>
+                                            <action selector="lookupGeocoding:" destination="gQX-4h-qFz" eventType="touchUpInside" id="zxx-hn-T7p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rz9-qF-BHb" firstAttribute="leading" secondItem="tut-o9-qto" secondAttribute="leadingMargin" constant="8" id="Ofa-iu-i55"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rz9-qF-BHb" secondAttribute="trailing" constant="8" id="PhE-BD-xAg"/>
+                            <constraint firstItem="rz9-qF-BHb" firstAttribute="top" secondItem="4Vt-j4-A59" secondAttribute="bottom" constant="100" id="reL-o6-rdo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="entry" destination="kpq-YF-rku" id="6Qt-FP-SzL"/>
+                        <outlet property="lookupType" destination="Fe7-Ou-Sbr" id="sY0-Dq-Huh"/>
+                        <outlet property="results" destination="bHq-Fi-6Uh" id="WY5-Un-tMW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bM5-JA-zKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2857.971014492754" y="-1393.2065217391305"/>
         </scene>
         <!--Alamofire View Controller-->
         <scene sceneID="Smn-4g-qPm">

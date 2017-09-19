@@ -16,7 +16,7 @@ import PromiseKit
 
 class RxDemoViewController: BaseViewController {
     
-    
+    private let disposeBag = DisposeBag()
     @IBOutlet weak var btnAsyncSwift: UIButton!
     
     override var name: String {
@@ -194,6 +194,39 @@ class RxDemoViewController: BaseViewController {
             }
         })
     }
+    
+    @IBAction func rxSchedulerTest(_ sender: UIButton) {
+        print("==UI \(Thread.current)")
+        
+        Observable.create { (observer: AnyObserver<Int>) -> Disposable in
+                print("==Observable \(Thread.current)")
+                observer.onNext(1)
+                observer.onCompleted()
+                return Disposables.create()
+            }
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .map({ (n) -> Int in
+                print("==A \(Thread.current)")
+                return n + 10
+            })
+            .observeOn(MainScheduler.instance)
+            .map({ (m) -> String in
+                print("==B \(Thread.current)")
+                return String(m)
+            })
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
+            .map({ (text) -> String in
+                print("==C \(Thread.current)")
+                return "X" + text
+            })
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (text) in
+                print("==D \(Thread.current)")
+                print("got \(text)")
+            }, onError: nil, onCompleted: nil, onDisposed: nil)
+            .addDisposableTo(disposeBag)
+    }
+
     
     @IBAction func btnPromiseClicked(_ sender: Any) {
         PHPhotoLibrary.requestAuthorization().then { authorized in
