@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+@IBDesignable
 class MyProfileHeaderView: UIView {
     // MARK:- 懒加载属性
     /// 背景视图

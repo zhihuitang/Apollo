@@ -14,7 +14,7 @@ class LocationDemoViewController: UIViewController {
     @IBOutlet weak var entry: UITextField!
     @IBOutlet weak var results: UILabel!
     @IBOutlet weak var lookupType: UISegmentedControl!
-    let geocoder: CLGeocoder = {
+    lazy var geocoder: CLGeocoder = {
         return CLGeocoder()
     }()
 

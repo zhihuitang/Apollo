@@ -72,6 +72,10 @@
 		02F465751F311844004AE9CD /* RotationLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F465741F311844004AE9CD /* RotationLabelViewController.swift */; };
 		02F465791F31197E004AE9CD /* RotationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F465781F31197E004AE9CD /* RotationLabel.swift */; };
 		02F4657B1F3119BC004AE9CD /* RotationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4657A1F3119BC004AE9CD /* RotationCell.swift */; };
+		02F4EAB01FC22FBE00F261FB /* RoundImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4EAAF1FC22FBE00F261FB /* RoundImageViewController.swift */; };
+		02F4EAB21FC2326200F261FB /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4EAB11FC2326200F261FB /* RoundView.swift */; };
+		02F4EAF41FC37B5E00F261FB /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4EAF31FC37B5E00F261FB /* RoundImageView.swift */; };
+		02F4EAF61FC3873600F261FB /* MyProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4EAF51FC3873600F261FB /* MyProgressBar.swift */; };
 		02F8614A1E21547900F18FBC /* LocalNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F861491E21547900F18FBC /* LocalNotificationViewController.swift */; };
 		3F376D00D5684DB3C204C97F /* Pods_ApolloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8922EBD215978820030376F7 /* Pods_ApolloTests.framework */; };
 		880B0EB68CA28094C131FA1F /* Pods_Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2190F93271D9E283ED0DF9 /* Pods_Apollo.framework */; };
@@ -164,6 +168,10 @@
 		02F465741F311844004AE9CD /* RotationLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationLabelViewController.swift; path = RotationLabel/RotationLabelViewController.swift; sourceTree = "<group>"; };
 		02F465781F31197E004AE9CD /* RotationLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationLabel.swift; path = RotationLabel/RotationLabel.swift; sourceTree = "<group>"; };
 		02F4657A1F3119BC004AE9CD /* RotationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationCell.swift; sourceTree = "<group>"; };
+		02F4EAAF1FC22FBE00F261FB /* RoundImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageViewController.swift; sourceTree = "<group>"; };
+		02F4EAB11FC2326200F261FB /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		02F4EAF31FC37B5E00F261FB /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		02F4EAF51FC3873600F261FB /* MyProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressBar.swift; sourceTree = "<group>"; };
 		02F861491E21547900F18FBC /* LocalNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationViewController.swift; sourceTree = "<group>"; };
 		15E92AA34E6449269BAB21CA /* Pods-Apollo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apollo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apollo/Pods-Apollo.debug.xcconfig"; sourceTree = "<group>"; };
 		46AAB5335A3AFEDD5ADFDAFB /* Pods-Apollo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apollo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Apollo/Pods-Apollo.release.xcconfig"; sourceTree = "<group>"; };
@@ -380,6 +388,7 @@
 		02F010E61E03E13C00D730D8 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
+				02F4EAAC1FC22F0300F261FB /* RoundImageView */,
 				0206A48B1F6E88540092307E /* Locations */,
 				020566E51F556A1D000A46DA /* Data Collection */,
 				02F465761F3118C5004AE9CD /* RotationLabelDemo */,
@@ -431,6 +440,17 @@
 				02F4657A1F3119BC004AE9CD /* RotationCell.swift */,
 			);
 			name = RotationLabel;
+			sourceTree = "<group>";
+		};
+		02F4EAAC1FC22F0300F261FB /* RoundImageView */ = {
+			isa = PBXGroup;
+			children = (
+				02F4EAAF1FC22FBE00F261FB /* RoundImageViewController.swift */,
+				02F4EAB11FC2326200F261FB /* RoundView.swift */,
+				02F4EAF31FC37B5E00F261FB /* RoundImageView.swift */,
+				02F4EAF51FC3873600F261FB /* MyProgressBar.swift */,
+			);
+			name = RoundImageView;
 			sourceTree = "<group>";
 		};
 		1DAF03256613C6BA59179976 /* Pods */ = {
@@ -533,7 +553,7 @@
 				TargetAttributes = {
 					02F010E31E03E13C00D730D8 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = UHQQY8UDK4;
+						DevelopmentTeam = RYYCVPYKXT;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -764,6 +784,7 @@
 				026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */,
 				02898D381E03E57500D3820B /* AlamofireViewController.swift in Sources */,
 				02898D361E03E56300D3820B /* CustomViewViewController.swift in Sources */,
+				02F4EAB01FC22FBE00F261FB /* RoundImageViewController.swift in Sources */,
 				02617AE81E1410DD00C3F4E9 /* TimerViewController.swift in Sources */,
 				026C9DA81E2C0BE700DDDD53 /* DropItView.swift in Sources */,
 				02898D341E03E43D00D3820B /* BaseViewController.swift in Sources */,
@@ -784,9 +805,11 @@
 				0204F71F1E04F1E800ECCB85 /* Extensions.swift in Sources */,
 				026C9DAB1E2C0D5400DDDD53 /* UIKit Extension.swift in Sources */,
 				026891871F5EF5AC001F3A9F /* TrafficCounter.swift in Sources */,
+				02F4EAB21FC2326200F261FB /* RoundView.swift in Sources */,
 				025668F01E323D96003966E2 /* GPX.swift in Sources */,
 				0241C3E51F33C3BC00754F3B /* MyButtonView.swift in Sources */,
 				02F010E81E03E13C00D730D8 /* AppDelegate.swift in Sources */,
+				02F4EAF61FC3873600F261FB /* MyProgressBar.swift in Sources */,
 				025668FF1E32A101003966E2 /* MapDemoViewController.swift in Sources */,
 				023C15461E041DFC00E5B4C1 /* FacialExpression.swift in Sources */,
 				0206A48D1F6E88720092307E /* LocationDemoViewController.swift in Sources */,
@@ -802,6 +825,7 @@
 				026BD1751E21A91B00C0E3F3 /* HistogramView.swift in Sources */,
 				020566EE1F556B08000A46DA /* CollectionPresenter.swift in Sources */,
 				02B1A81A1E3358E2008CB207 /* ImageViewController.swift in Sources */,
+				02F4EAF41FC37B5E00F261FB /* RoundImageView.swift in Sources */,
 				025668F21E3242FB003966E2 /* MKGPX.swift in Sources */,
 				02641D4F1EF2667F0037741D /* AudioViewController.swift in Sources */,
 			);
@@ -958,7 +982,7 @@
 			baseConfigurationReference = 15E92AA34E6449269BAB21CA /* Pods-Apollo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UHQQY8UDK4;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
 				INFOPLIST_FILE = Apollo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -975,7 +999,7 @@
 			baseConfigurationReference = 46AAB5335A3AFEDD5ADFDAFB /* Pods-Apollo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UHQQY8UDK4;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
 				INFOPLIST_FILE = Apollo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
