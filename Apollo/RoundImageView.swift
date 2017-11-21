@@ -16,6 +16,7 @@ class RoundImageView: UIView {
             imageView.image = image
         }
     }
+    
     @IBInspectable
     var radius: CGFloat = 50.0 {
         didSet {
@@ -24,13 +25,20 @@ class RoundImageView: UIView {
             imageView.layer.cornerRadius = radius
         }
     }
-    
     @IBInspectable
     var shadowRadius: CGFloat = 5.0 {
         didSet {
             outerView.layer.shadowRadius = shadowRadius
         }
     }
+    
+    @IBInspectable
+    var shadowColor: UIColor = .black {
+        didSet {
+            outerView.layer.shadowColor = shadowColor.cgColor
+        }
+    }
+    
     @IBInspectable
     var shadowOffset: CGSize = CGSize.zero {
         didSet {
@@ -44,30 +52,26 @@ class RoundImageView: UIView {
             outerView.layer.shadowOpacity = shadowOpacity
         }
     }
-    @IBInspectable
-    var bgColor: UIColor = .white {
-        didSet {
-            outerView.backgroundColor = bgColor
-        }
-    }
-    @IBInspectable
-    var shadowColor: UIColor = .black {
-        didSet {
-            outerView.layer.shadowColor = shadowColor.cgColor
-        }
-    }
     
+    
+    
+   
     @IBInspectable
     var borderWidth: CGFloat = 2.0 {
         didSet {
             outerView.layer.borderWidth = borderWidth
         }
     }
-    
     @IBInspectable
     var borderColor: UIColor = .white {
         didSet {
             outerView.layer.borderColor = borderColor.cgColor
+        }
+    }
+    @IBInspectable
+    var bgColor: UIColor = .white {
+        didSet {
+            outerView.backgroundColor = bgColor
         }
     }
 
@@ -96,6 +100,8 @@ class RoundImageView: UIView {
         outerView.clipsToBounds = false
         outerView.layer.shadowOpacity = shadowOpacity
         
+        imageView.contentMode = .scaleAspectFit
+
         outerView.addSubview(imageView)
         self.addSubview(outerView)
     }
