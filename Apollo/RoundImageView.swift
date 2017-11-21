@@ -28,13 +28,32 @@ class RoundImageView: UIView {
     @IBInspectable
     var shadowRadius: CGFloat = 5.0 {
         didSet {
+            outerView.layer.shadowRadius = shadowRadius
+        }
+    }
+    @IBInspectable
+    var shadowOffset: CGSize = CGSize.zero {
+        didSet {
+            outerView.layer.shadowOffset = shadowOffset
         }
     }
     
     @IBInspectable
+    var shadowOpacity: Float = 1 {
+        didSet {
+            outerView.layer.shadowOpacity = shadowOpacity
+        }
+    }
+    @IBInspectable
     var bgColor: UIColor = .white {
         didSet {
             outerView.backgroundColor = bgColor
+        }
+    }
+    @IBInspectable
+    var shadowColor: UIColor = .black {
+        didSet {
+            outerView.layer.shadowColor = shadowColor.cgColor
         }
     }
     
@@ -62,30 +81,29 @@ class RoundImageView: UIView {
         commonInit()
     }
     
+    lazy private var outerView: UIView = {
+        let view = UIView(frame: self.bounds)
+        return view
+        
+    }()
+    lazy private var imageView: UIImageView = {
+        let view = UIImageView(frame: self.bounds)
+        return view
+    }()
+    
+    private func commonInit() {
+        imageView.clipsToBounds = true
+        outerView.clipsToBounds = false
+        outerView.layer.shadowOpacity = shadowOpacity
+        
+        outerView.addSubview(imageView)
+        self.addSubview(outerView)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         outerView.frame = self.bounds
         imageView.frame = self.bounds
     }
     
-    private var outerView: UIView = UIView()
-    private var imageView: UIImageView = UIImageView()
-    
-    private func setupLayer() {
-        imageView.clipsToBounds = true
-        outerView.clipsToBounds = false
-        
-        outerView.layer.shadowColor = UIColor.black.cgColor
-        outerView.layer.shadowOpacity = 1
-        outerView.layer.shadowOffset = CGSize.zero
-        outerView.layer.shadowRadius = shadowRadius
-
-    }
-    
-    private func commonInit() {
-        setupLayer()
-        outerView.addSubview(imageView)
-        self.addSubview(outerView)
-        
-    }
 }
