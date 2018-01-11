@@ -47,7 +47,7 @@ class RoundImageView: UIView {
     }
     
     @IBInspectable
-    var shadowOpacity: Float = 1 {
+    var shadowOpacity: Float = 0 {
         didSet {
             outerView.layer.shadowOpacity = shadowOpacity
         }

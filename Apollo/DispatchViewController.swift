@@ -30,7 +30,7 @@ class DispatchViewController: BaseViewController {
         let queue = DispatchQueue(label: "com.appcoda.myqueue")
         queue.async {
             for i in 0..<10 {
-                print("🍎 \(i)")
+                logger.d("🍎 \(i)")
             }
         }
         
@@ -45,18 +45,18 @@ class DispatchViewController: BaseViewController {
         
         queue1.async {
             for i in 0..<10 {
-                print("🍎 \(i)")
+                logger.d("🍎 \(i)")
             }
         }
 
         queue2.async {
             for i in 100..<110 {
-                print("🍏 \(i)")
+                logger.d("🍏 \(i)")
             }
         }
 
         DispatchQueue.main.asyncAfter(deadline: 10 ) {
-            print("finished 👌")
+            logger.d("finished 👌")
         }
     }
     

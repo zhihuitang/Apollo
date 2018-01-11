@@ -18,9 +18,9 @@ class LocalNotificationViewController: BaseViewController {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { (success, error) in
                 if success {
-                    print("success")
+                    logger.d("success")
                 } else {
-                    print("error")
+                    logger.d("error")
                 }
             }
         } else {
@@ -56,7 +56,7 @@ class LocalNotificationViewController: BaseViewController {
         // 4
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
-        print("local notification ")
+        logger.d("local notification ")
     }
     
 }

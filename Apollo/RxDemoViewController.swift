@@ -24,23 +24,23 @@ class RxDemoViewController: BaseViewController {
     }
     
     @IBAction func rxDemo1(_ sender: Any) {
-        print("RxSwift1")
+        logger.d("RxSwift1")
         
         let _ = Observable.from([1,2,3,4,5])
             .flatMap({ (value) -> Observable<String> in
                 //
                 sleep(1)
                 let s = "A+\(value)"
-                print("Observable flatMap: \(s)")
+                logger.d("Observable flatMap: \(s)")
                 return Observable.just(s)
             })
             .subscribe(onNext: { (value) in
-                print("got \(value)")
+                logger.d("got \(value)")
             }, onError: { (erro) in
                 //
             }, onCompleted: { 
                 //
-                print("completed😬")
+                logger.d("completed😬")
             }, onDisposed: { 
                 //
             })
@@ -56,12 +56,12 @@ class RxDemoViewController: BaseViewController {
         let fetchOptions = PHFetchOptions()
         
         let albums = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
-        print("smartAlbums count \(albums.count)")
+        logger.d("smartAlbums count \(albums.count)")
         
         albums.enumerateObjects({ (collection, index, stop) in
             //
             
-            print("index: \(index), \(collection.description)")
+            logger.d("index: \(index), \(collection.description)")
       
         })
     }
@@ -70,7 +70,7 @@ class RxDemoViewController: BaseViewController {
         let result = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: nil)
         result.enumerateObjects({ (collection, index, stop) in
             if let albumName = collection.localizedTitle {
-                print("Album => \(collection.localIdentifier), \(collection.estimatedAssetCount), \(albumName) ")
+                logger.d("Album => \(collection.localIdentifier), \(collection.estimatedAssetCount), \(albumName) ")
             }
             
             let assResult = PHAsset.fetchAssets(in: collection, options: nil)
@@ -91,7 +91,7 @@ class RxDemoViewController: BaseViewController {
                 
                 PHImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .default, options: options) { (image, info) in
                     if let name = asset.originalFilename {
-                        print("photo \(name) \(index) \(String(describing: image?.size)) ")
+                        logger.d("photo \(name) \(index) \(String(describing: image?.size)) ")
                     }
                 }
  
@@ -119,16 +119,16 @@ class RxDemoViewController: BaseViewController {
                 
 
             })
-            print("finish")
+            logger.d("finish")
 
         })
     }
     
     private func fetchPhotoCollectionList(){
         let result = PHCollectionList.fetchCollectionLists(with: .folder, subtype: .any, options: nil)
-        print("result \(result.count)")
+        logger.d("result \(result.count)")
         result.enumerateObjects({ (collectionList, index, stop) in
-            print("title: \(String(describing: collectionList.localizedTitle))")
+            logger.d("title: \(String(describing: collectionList.localizedTitle))")
         })
     }
     
@@ -136,32 +136,32 @@ class RxDemoViewController: BaseViewController {
     @IBAction func asyncSwiftDemo(_ sender: Any) {
         let group = AsyncGroup()
         group.background {
-            print("This is run on the background queue")
+            logger.d("This is run on the background queue")
             sleep(2)
         }
         group.background {
-            print("This is also run on the background queue in parallel")
+            logger.d("This is also run on the background queue in parallel")
             sleep(5)
         }
-        print("waiting......")
+        logger.d("waiting......")
         group.wait()
-        print("Both asynchronous blocks are complete")
-        print("======================================================")
+        logger.d("Both asynchronous blocks are complete")
+        logger.d("======================================================")
         Async.userInitiated {
             // 1
                 return 10
             }.main {
                 // 2
-                print("got \($0) in main")
+                logger.d("got \($0) in main")
             }.background {
                 // 3
                 sleep(5)
-                print("got \($0) in background")
+                logger.d("got \($0) in background")
             }.main {
                 // 4
                 let text = "AsyncSwift \($0)"
                 self.btnAsyncSwift.setTitle(text, for: .normal)
-                print("got \($0) in main")
+                logger.d("got \($0) in main")
             }
     }
     
@@ -188,7 +188,7 @@ class RxDemoViewController: BaseViewController {
             PHImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: options) { (image, info) in
                 count = count + 1
                 if let name = asset.originalFilename {
-                    print("photo \(count): \(name) ")
+                    logger.d("photo \(count): \(name) ")
                 }
                 
             }
@@ -196,33 +196,34 @@ class RxDemoViewController: BaseViewController {
     }
     
     @IBAction func rxSchedulerTest(_ sender: UIButton) {
-        print("==UI \(Thread.current)")
+        logger.d("==UI \(Thread.current)")
         
         Observable.create { (observer: AnyObserver<Int>) -> Disposable in
-                print("==Observable \(Thread.current)")
+                logger.d("==Observable \(Thread.current)")
                 observer.onNext(1)
                 observer.onCompleted()
                 return Disposables.create()
             }
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            //.subscribeOn(MainScheduler.instance)
             .map({ (n) -> Int in
-                print("==A \(Thread.current)")
+                logger.d("==A \(Thread.current)")
                 return n + 10
             })
             .observeOn(MainScheduler.instance)
             .map({ (m) -> String in
-                print("==B \(Thread.current)")
+                logger.d("==B \(Thread.current)")
                 return String(m)
             })
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
             .map({ (text) -> String in
-                print("==C \(Thread.current)")
+                logger.d("==C \(Thread.current)")
                 return "X" + text
             })
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (text) in
-                print("==D \(Thread.current)")
-                print("got \(text)")
+                logger.d("==D \(Thread.current)")
+                logger.d("got \(text)")
             }, onError: nil, onCompleted: nil, onDisposed: nil)
             .addDisposableTo(disposeBag)
     }
@@ -230,9 +231,9 @@ class RxDemoViewController: BaseViewController {
     
     @IBAction func btnPromiseClicked(_ sender: Any) {
         PHPhotoLibrary.requestAuthorization().then { authorized in
-            print("authorized: \(authorized.rawValue)")  // => true or false
+            logger.d("authorized: \(authorized.rawValue)")  // => true or false
         }.always {
-            print("promise finished")
+            logger.d("promise finished")
         }
 
         /*

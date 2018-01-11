@@ -20,7 +20,7 @@ class MyButtonView: UIView {
         setupView()
     }
     @IBAction func buttonClicked(_ sender: Any) {
-        print("my button clicked")
+        logger.d("my button clicked")
     }
     
     private func setupView() {
@@ -32,7 +32,7 @@ class MyButtonView: UIView {
     }
     
     override func awakeFromNib() {
-        print("awakeFromNib")
+        logger.d("awakeFromNib")
     }
 
 }

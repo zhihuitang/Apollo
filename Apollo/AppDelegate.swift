@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftMagic
+
+let logger = Logger.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //Logger.shared.level = .info
+        logger.level = .info
         return true
     }
 

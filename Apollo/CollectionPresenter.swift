@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 import ExternalAccessory
 import CoreBluetooth
+import SwiftMagic
 
 protocol CollectionDelegate {
     var data: [DeviceInfo] { get }
@@ -79,7 +80,7 @@ class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegat
     func getBlueteethDevices(){
         let accessories = EAAccessoryManager.shared().connectedAccessories
         if accessories.count < 1 {
-            print("no connected accessories")
+            logger.d("no connected accessories")
         } else {
             for accessory in accessories {
                 print(accessory.name)
@@ -88,14 +89,13 @@ class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegat
     }
     
     func startUpCentralManager() {
-        print("Initializing central manager")
+        logger.d("Initializing central manager")
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("\(#line) \(#function)")
-        print("checking state")
+        logger.d("checking state")
         
         if central.state != .poweredOn {
             // In a real app, you'd deal with all the states correctly
@@ -108,3 +108,4 @@ class CollectionPresenter: NSObject, CollectionDelegate, CBCentralManagerDelegat
         
     }
 }
+

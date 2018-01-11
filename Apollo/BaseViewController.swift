@@ -26,7 +26,7 @@ class BaseViewController: UIViewController {
 
         self.navigationItem.title = self.name
         // Do any additional setup after loading the view.
-        print("\(self.className) count: \(instanceCount)")
+        logger.d("\(self.className) count: \(instanceCount)")
     }
 
     override func didReceiveMemoryWarning() {

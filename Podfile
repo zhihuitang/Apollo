@@ -25,4 +25,5 @@ target 'Apollo' do
     # Pods for testing
   end
 
+    pod 'SwiftMagic',:branch => 'log-report', :git => 'https://github.com/zhihuitang/SwiftMagic'
 end

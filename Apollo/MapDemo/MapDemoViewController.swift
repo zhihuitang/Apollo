@@ -44,11 +44,11 @@ class MapDemoViewController: BaseViewController, MKMapViewDelegate {
         
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            print("already have location permission")
+            logger.d("already have location permission")
             return
             
         case .denied, .restricted:
-            print("location access denied")
+            logger.d("location access denied")
             
         default:
             print("request location....")

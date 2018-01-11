@@ -127,7 +127,7 @@ class TimerViewController: BaseViewController {
         
         let text = "[\(count)]updated at \(now.description)"
         labelTimer.text = text
-        print("Timer.scheduledTimer test: \(text)")
+        logger.d("Timer.scheduledTimer test: \(text)")
     }
 
 }

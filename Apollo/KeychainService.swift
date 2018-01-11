@@ -82,7 +82,7 @@ public class KeychainService: NSObject {
                 contentsOfKeychain = NSString(data: retrievedData as Data, encoding: String.Encoding.utf8.rawValue)
             }
         } else {
-            print("Nothing was retrieved from the keychain. Status code \(status)")
+            logger.d("Nothing was retrieved from the keychain. Status code \(status)")
         }
         
         return contentsOfKeychain

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftMagic
 
 class MainViewController: UITableViewController {
 
@@ -22,7 +22,7 @@ class MainViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        print("device name:\(UIDevice.current.name)")
+        logger.d("device name:\(UIDevice.current.name)")
         self.navigationItem.title = "Apollo project"
         
         loadData()
