@@ -12,59 +12,104 @@ import MessageUI
 private let screenWidth = UIScreen.main.bounds.width
 private let screenHeight = UIScreen.main.bounds.height
 private let keyWindow = UIApplication.shared.keyWindow
-private let yearLH: CGFloat = 126.0
-private let sureVH: CGFloat = 44.0
-private let margin: CGFloat = 10.0
+
+let themeColor: UIColor = UIColor.hex(hex: 0x00B3C4)
 
 class LoggerViewController: UIViewController {
 
-    var label: UILabel = {
-        let view = UILabel(frame: CGRect(x: 10, y: 20, width: 100, height: 100))
-        view.text = "Hello logger"
-        //view.backgroundColor = UIColor.red
+    var delegate: LoggerAction?
+    
+    var data: String? {
+        didSet {
+            textView.text = data
+        }
+    }
+    
+    var textView: UITextView = {
+        //let view = HScrollableTextView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), textContainer: nil)
+        let view = UITextView()
+        view.isEditable = false
+        view.backgroundColor = UIColor.lightGray
+        //view.contentSize = CGSize(width: 1000, height: 200)
         return view
     }()
     
-    var button: UIButton = {
+    var btnSend: UIButton = {
         let button = UIButton(type: .system)
-        button.frame = CGRect(x: 50, y: 200, width: 150, height: 50)
-        button.backgroundColor = UIColor.red
-        button.setTitle("send email", for: .normal)
+        button.backgroundColor = themeColor
+        button.setTitleColor(.white, for: .normal)
+        button.roundedCorners(cornerRadius: 5)
+        button.setTitle("Send email", for: .normal)
+        button.addTarget(self, action: #selector(btnSendPressed(_:)), for: .touchUpInside)
+        
         return button
-    }()    
+    }()
+    
+    var btnRemove: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = themeColor
+        button.setTitleColor(.white, for: .normal)
+        button.roundedCorners(cornerRadius: 5)
+        button.setTitle("Remove All", for: .normal)
+        button.addTarget(self, action: #selector(btnRemovePressed(_:)), for: .touchUpInside)
+        return button
+    }()
+    var btnCancel: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = themeColor
+        button.setTitleColor(.white, for: .normal)
+        button.roundedCorners(cornerRadius: 5)
+        button.setTitle("Cancel", for: .normal)
+        button.addTarget(self, action: #selector(btnCancelPressed(_:)), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-        self.view.addSubview(label)
-        
-        button.addTarget(self, action: #selector(sendEmail(_:)), for: .touchUpInside)
-        self.view.addSubview(button)
-        
-        /*
-        let yearL = UILabel(frame: CGRect(x: margin, y: screenHeight, width: screenWidth - margin * 2, height: yearLH))
-        yearL.transform = CGAffineTransform.identity
-        yearL.isUserInteractionEnabled = true
-        yearL.backgroundColor = .white
-        yearL.textColor = UIColor.hex(hex: 0xE9ECF2)
-        yearL.textAlignment = NSTextAlignment.center
-        yearL.font = UIFont.systemFont(ofSize: 110)
-        yearL.adjustsFontSizeToFitWidth = true
-        self.view.addSubview(yearL)
-        yearL.roundedCorners(cornerRadius: 10, rectCorner: UIRectCorner([.topLeft, .topRight]))
 
-        let sureView = UIButton(type: UIButtonType.system)
-        sureView.frame = CGRect(x: margin, y: yearL.y + yearL.height, width: yearL.width, height: sureVH)
-        sureView.transform = CGAffineTransform.identity
-        sureView.setTitle("确认", for: UIControlState.normal)
-        sureView.setTitleColor(.white, for: UIControlState.normal)
-        //sureView.addTarget(self, action: #selector(sureDate(_:)), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(sureView)
- */
+        addSubViews()
+        
+        textView.text = data
+
+    }
+    
+    private func addSubViews() {
+        self.view.backgroundColor = UIColor.white
+        
+        [textView, btnSend, btnRemove, btnCancel].forEach { (subView: UIView) in
+            subView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(subView)
+        }
+        
+        let views: [String:UIView] = ["textView": textView, "btnSend": btnSend, "btnRemove": btnRemove, "btnCancel": btnCancel]
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[textView]|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-(16)-[btnSend]-(16)-|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-(16)-[btnRemove]-(16)-|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-(16)-[btnCancel]-(16)-|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(20)-[textView]-[btnSend(==32)]-[btnRemove(==32)]-[btnCancel(==32)]-(8)-|", options: [], metrics: nil, views: views))
+        
+        
+        textView.text = "Hello SwiftMagic"
+    }
+    
+    @objc func btnCancelPressed(_ button: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func btnSendPressed(_ button: UIButton) {
+        sendEmail()
+    }
+    
+    @objc func btnRemovePressed(_ button: UIButton) {
+        delegate?.removeAll()
+    }
+    
+    func reload() {
         
     }
     
-    @objc func sendEmail(_ button: UIButton) {
+    private func sendEmail() {
         //Check to see the device can send email.
         guard MFMailComposeViewController.canSendMail() == true else {
             self.showAlert(withTitle: "No email client", message: "Please configure your email client first")
@@ -73,14 +118,20 @@ class LoggerViewController: UIViewController {
 
         guard let url = Logger.shared.logUrl else { return }
         
-        print("Can send email.")
-        
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         
-        //Set the subject and message of the email
-        mailComposer.setSubject("Have you heard a swift?")
-        mailComposer.setMessageBody("This is what they sound like.", isHTML: false)
+        var body = "Host App: \(Bundle.main.bundleIdentifier ?? "")\n"
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+            body += "Host App Version: \(version).\(buildNumber)\n"
+        }
+        if let venderId = UIDevice.current.identifierForVendor {
+            body += "identifierForVendor: \(venderId)\n"
+        }
+
+        mailComposer.setSubject("Log of \(Bundle.main.bundleIdentifier ?? "")")
+        mailComposer.setMessageBody(body, isHTML: false)
 
         if let data = try? Data(contentsOf: url) {
             mailComposer.addAttachmentData(data, mimeType: "text/txt", fileName: "SwiftMagic.txt")
@@ -91,21 +142,19 @@ class LoggerViewController: UIViewController {
     
 extension LoggerViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
-        print("send mail result: \(result.rawValue)")
-        
-        switch result {
-        case .cancelled:
-            break
-        case .sent:
-            break
-        case .failed:
-            break
-        case .saved:
-            break
-        }
-        // Dismiss the mail compose view controller.
         controller.dismiss(animated: true, completion: nil)
+        switch result {
+            case .cancelled:
+                self.showAlert(withTitle: "Cancel", message: "Send email canceled")
+                break
+            case .sent:
+                break
+            case .failed:
+                self.showAlert(withTitle: "Failed", message: "Send email failed")
+                break
+            case .saved:
+                break
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }

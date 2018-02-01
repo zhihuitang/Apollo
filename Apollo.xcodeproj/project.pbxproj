@@ -44,6 +44,7 @@
 		0268918A1F5EF639001F3A9F /* Ex+UInt32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026891881F5EF639001F3A9F /* Ex+UInt32.swift */; };
 		0268918B1F5EF639001F3A9F /* Ex+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026891891F5EF639001F3A9F /* Ex+Double.swift */; };
 		0268918D1F5F28BB001F3A9F /* TrafficData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268918C1F5F28BB001F3A9F /* TrafficData.swift */; };
+		026B238C2023445100DBB125 /* Swizzling+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B238B2023445100DBB125 /* Swizzling+Extension.swift */; };
 		026BD16E1E21A4EE00C0E3F3 /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 026BD16D1E21A4EE00C0E3F3 /* applelogo.png */; };
 		026BD1711E21A5F600C0E3F3 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1701E21A5F600C0E3F3 /* SortViewController.swift */; };
 		026BD1731E21A7E600C0E3F3 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BD1721E21A7E600C0E3F3 /* BarView.swift */; };
@@ -134,6 +135,7 @@
 		026891881F5EF639001F3A9F /* Ex+UInt32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+UInt32.swift"; sourceTree = "<group>"; };
 		026891891F5EF639001F3A9F /* Ex+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+Double.swift"; sourceTree = "<group>"; };
 		0268918C1F5F28BB001F3A9F /* TrafficData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficData.swift; sourceTree = "<group>"; };
+		026B238B2023445100DBB125 /* Swizzling+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swizzling+Extension.swift"; sourceTree = "<group>"; };
 		026BD16D1E21A4EE00C0E3F3 /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		026BD1701E21A5F600C0E3F3 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		026BD1721E21A7E600C0E3F3 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				026C9DAA1E2C0D5400DDDD53 /* UIKit Extension.swift */,
+				026B238B2023445100DBB125 /* Swizzling+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				02E934B11E922988000C5AB6 /* RxDemoViewController.swift in Sources */,
 				0268918B1F5EF639001F3A9F /* Ex+Double.swift in Sources */,
 				022D10961E0BD229001BDFBB /* EyeView.swift in Sources */,
+				026B238C2023445100DBB125 /* Swizzling+Extension.swift in Sources */,
 				021BCEF51E22EF8300A4F0A6 /* Sort.swift in Sources */,
 				023C152E1E03EBAD00E5B4C1 /* CalculatorViewController.swift in Sources */,
 				026891831F5EF594001F3A9F /* TrafficPackage.swift in Sources */,

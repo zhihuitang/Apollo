@@ -11,6 +11,9 @@ import SwiftMagic
 
 let logger = Logger.shared
 
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //Logger.shared.level = .info
         logger.level = .info
+        logger.ouput = .debugerConsoleAndFile
+        
+        //UIView.classInit
+        UIViewController.classInit
+        UIViewController.classInit
         return true
     }
 

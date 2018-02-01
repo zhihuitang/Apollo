@@ -1,3 +1,11 @@
+//
+//  LoggerViewController.swift
+//  SwiftMagic
+//
+//  Created by Zhihui Tang on 2018-01-10.
+//
+
+
 import UIKit
 
 public extension FileManager {

@@ -18,11 +18,11 @@ public enum LoggerLevel: Int {
     
     var name: String {
         switch self {
-        case .info: return "💙i"
-        case .debug: return "💚d"
-        case .warning: return "💛w"
-        case .error: return "❤️e"
-        case .none: return "N"
+            case .info: return "💙i"
+            case .debug: return "💚d"
+            case .warning: return "💛w"
+            case .error: return "❤️e"
+            case .none: return "N"
         }
     }
 }
@@ -30,10 +30,14 @@ public enum LoggerLevel: Int {
 public enum LoggerOutput: String {
     case debuggerConsole
     case deviceConsole
+    case fileOnly
+    case debugerConsoleAndFile
+    case deviceConsoleAndFile
 }
 
 
 private let fileExtension = "txt"
+private let LOG_BUFFER_SIZE = 10
 
 public class Logger: NSObject {
     public static let shared = Logger()
@@ -58,20 +62,17 @@ public class Logger: NSObject {
     }
     
     @objc private func appMovedToBackground() {
-        print("appMovedToBackground")
-        
         let lock = NSLock()
         lock.lock()
         defer { lock.unlock() }
-        
         save()
     }
     
-    public func save() {
+    func save() {
         guard let url = logUrl else { return }
         var stringsData = Data()
         for string in data {
-            if let stringData = (string + "\n").data(using: String.Encoding.utf16) {
+            if let stringData = (string + "\n").data(using: String.Encoding.utf8) {
                 stringsData.append(stringData)
             } else {
                 self.e("MutalbeData failed")
@@ -84,10 +85,20 @@ public class Logger: NSObject {
         } catch let error as NSError {
             self.e("wrote failed: \(url.absoluteString), \(error.localizedDescription)")
         }
-        
     }
     
-   
+    func removeAll() {
+        guard let url = logUrl else { return }
+        try? FileManager.default.removeItem(at: url)
+    }
+    
+    func load() -> String? {
+        guard let url = logUrl else { return nil }
+        guard let strings = try? String(contentsOf: url, encoding: String.Encoding.utf8) else { return nil }
+
+        return strings
+    }
+
     public func log(_ level: LoggerLevel, message: String, currentTime: Date, fileName: String , functionName: String, lineNumber: Int, thread: Thread) {
         
         guard level.rawValue >= self.level.rawValue else { return }
@@ -95,12 +106,32 @@ public class Logger: NSObject {
         
         let _fileName = fileName.split(separator: "/")
         let text = "\(level.name)-\(showThread ? thread.description : "")[\(_fileName.last ?? "?")#\(functionName)#\(lineNumber)]\(tag ?? ""): \(message)"
-        if self.ouput == .deviceConsole {
-            NSLog(text)
-        } else {
-            print("\(currentTime.iso8601) \(text)")
+        
+        switch self.ouput {
+            case .fileOnly:
+                addToBuffer(text: "\(currentTime.iso8601) \(text)")
+            case .debuggerConsole:
+                print("\(currentTime.iso8601) \(text)")
+            case .deviceConsole:
+                NSLog(text)
+            case .debugerConsoleAndFile:
+                print("\(currentTime.iso8601) \(text)")
+                addToBuffer(text: "\(currentTime.iso8601) \(text)")
+            case .deviceConsoleAndFile:
+                NSLog(text)
+                addToBuffer(text: "\(currentTime.iso8601) \(text)")
         }
-        data.append("\(currentTime.iso8601) \(text)")
+    }
+    
+    private func addToBuffer(text: String) {
+        let lock = NSLock()
+        lock.lock()
+        defer { lock.unlock() }
+        
+        data.append(text)
+        if data.count > LOG_BUFFER_SIZE {
+            save()
+        }
     }
     
     public func i(_ message: String, currentTime: Date = Date(), fileName: String = #file, functionName: String = #function, lineNumber: Int = #line, thread: Thread = Thread.current ) {

@@ -35,7 +35,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftMagic:
-    :commit: 1ca48c0d4d17430cc549d3336c36f28cc4eb5f83
+    :commit: ab5ab783077df03a4c334c43fda29e4a0ec4f475
     :git: https://github.com/zhihuitang/SwiftMagic
 
 SPEC CHECKSUMS:
