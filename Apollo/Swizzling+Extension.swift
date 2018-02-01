@@ -20,14 +20,7 @@ private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, origin
 // ------------------------------------------------------------------------------------------------
 
 extension UIViewController {
-    var contentViewController: UIViewController {
-        if let navcon = self as? UINavigationController {
-            return navcon.visibleViewController ?? navcon
-        } else {
-            return self
-        }
-    }
-    
+
     static let classInit: Void = {
         logger.d("UIViewController classInit")
         let originalSelector = #selector(viewWillAppear)
@@ -95,6 +88,6 @@ extension UIView: SelfAware {
     // MARK: - Method Swizzling
     func swizzled_layoutSubviews() {
         self.swizzled_layoutSubviews()
-        logger.d("layoutSubviews: \(self.className)")
+        //logger.d("layoutSubviews: \(self.className)")
     }
 }
